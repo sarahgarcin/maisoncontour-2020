@@ -1,0 +1,161 @@
+// -------------- MOBILE-FIRST HEADER --------------
+.nav{ 
+	margin:0;
+	width: 100%;
+	font-size: $textSize;
+	padding: 0;
+	.main-nav{
+		margin-top: $marginSmall;
+		margin-bottom: $marginNormal;
+		padding-left:0;
+		ul{
+			padding: 0;
+			li{
+				list-style: none;
+				color: $textColor;
+				@include grayBorder;
+				&.group1{
+					font-size: $titleSize;
+					text-transform: uppercase;
+				}
+				&.group2{
+					font-size: $h2Size;
+				}
+				&.group3{
+					font-size: $h2Size;
+				}
+				&.group4{
+					font-size: $textSize;
+				}
+				&.group5{
+					font-size: $textSize;
+				}
+				a{
+					color: $textColor;
+					&:hover{
+						color: $mainColor;
+					}
+				}
+				&.active{
+					a{
+						color: $mainColor;
+					}
+				}
+			}				
+		}
+	}
+}
+
+
+header{
+	// width: 100%;
+	// max-width: 100%;
+	position: absolute;
+	left:0;
+	top:0; 
+	z-index: 100; 
+	&.row{margin:0;}
+	a{text-decoration:none;}
+	.logo{
+		padding: $marginNormal $marginNormal 0 $marginNormal;
+		h1{
+			font-family: "Maximum", sans-serif;
+			color: $textColor;
+			font-size: 15px;
+			text-align: center;
+			font-style:normal;
+			font-weight: bold;
+		}
+		img{
+			min-width: 50px;
+		}
+		a{
+			border:none;
+		}
+	}
+	// .mobile-menu{
+	// 	display:flex;
+	// 	justify-content: space-between;
+	// 	align-items:center;
+	// 	width: 100%;
+	// }
+	// .mobile-menu_btn{
+	// 	display:block;
+	// 	position:relative;
+	// 	margin:0px 50px;
+	// 	cursor:pointer;
+	// 	height:24px;
+	// 	span {
+	// 	  display:block;
+	// 	  background:$textColor;
+	// 	  height:4px;
+	// 	  width:35px;
+	// 	  position:absolute;
+	// 	  transition:all 0.5s ease;
+	// 	}
+	// 	span:nth-child(1){top:0px;}
+	// 	span:nth-child(2){top:10px;}
+	// 	span:nth-child(3){top:20px;}
+
+	// 	.transparent {opacity:0;}
+	// 	.rotate-top{transform:rotatez(45deg);-webkit-transform-origin:0%;left:2px}
+	// 	.rotate-bottom{transform:rotatez(-45deg);-webkit-transform-origin: 15%;}
+	// }
+	.nav{
+		max-height:0; 
+		overflow:hidden; 
+		background: #FFF;
+		margin:0;
+		padding-left: 5.5vw;
+		width: 100%;
+		transition: all 1s linear;
+		font-size: $textSize;
+		font-weight: 500;
+		&.active{
+			max-height: 100vh; 
+			overflow: auto;
+		}
+	}
+	.main-nav{
+		margin-top: $marginSmall;
+		margin-bottom: $marginNormal;
+		padding-left:0;
+		li{
+			list-style: none;
+			color: $textColor;
+			flex: 1 1 0;
+			display: flex;
+			margin-bottom: $marginSmall;
+			a{
+				color: $textColor;
+				&:hover{
+					color: $textColor;
+					border-bottom: 2px solid currentcolor;
+				}
+			}
+			&.active{
+				a{
+					color: $mainColor;
+					border-bottom: 2px solid currentcolor;
+					&::before{
+						background-size: 100% 100%;
+					}
+				}
+			}				
+		}
+	}
+}
+
+
+// -------------- DESKTOP HEADER --------------
+@media only screen and (min-width: 48em){
+	header{
+		padding: 0; 
+		.logo{
+			.image-logo-wrapper{
+				width: 50%;
+				margin:auto;
+			}
+		}
+	}
+}

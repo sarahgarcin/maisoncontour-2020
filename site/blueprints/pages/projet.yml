@@ -1,0 +1,38 @@
+title: Projet
+preset: page
+pages: false
+
+fields:
+  cover: 
+    label: Image de couverture
+    type: files
+  text:
+    label: Descriptif
+    type: textarea
+    size: small
+  time: 
+    label: Date
+    type: date
+  topography: 
+    label: Topographie
+    type: textarea
+  place: 
+    label: Lieu
+    type: text
+  distribution: 
+    label: Distribution
+    type: textarea
+  partenaires: 
+    label: Partenaires
+    type: textarea
+  pdfs: 
+    label: Documents PDF
+    type: structure
+    fields:
+      title: 
+        label: Titre du PDF à afficher
+        type: text
+      doc: 
+        label: PDF
+        type: files
+

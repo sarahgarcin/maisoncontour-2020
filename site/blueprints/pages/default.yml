@@ -1,0 +1,134 @@
+title: Article
+preset: page
+pages: false
+
+fields:
+  group: 
+    label: Numéro du groupe dans le menu
+    type: radio
+    options: 
+      group1: Groupe 1
+      group2: Groupe 2
+      group3: Groupe 3
+      group4: Groupe 4
+      group5: Groupe 5
+    width: 1/2
+  cover: 
+    label: Image de couverture
+    type: files
+    width: 1/2
+  mybuilder:
+    label: Page Builder
+    type: builder
+    columns: 1 # Optional. If set to 2 or more, the builder blocks will be placed in a grid.
+    fieldsets:
+      bodytext:
+        name: Texte
+        label: Texte courant — {{title}}
+        preview:
+          snippet: blocks/bodytext
+        defaultView: preview 
+        fields:
+          title: 
+            label: Titre de la section
+            type: text
+          text:
+            label: Texte
+            type: textarea
+      foldtext:
+        name: Texte à déplier (en savoir plus)
+        label: Texte à déplier — {{title}}
+        preview:
+          snippet: blocks/foldtext
+        defaultView: preview 
+        fields:
+          title: 
+            label: Titre de la section
+            type: text
+          summary: 
+            label: Texte à faire apparaitre
+            type: textarea
+          text:
+            label: Texte à déplier 
+            type: textarea
+      quote: # This is a field set. It contains a group of kirby fields. The user can select from these sets to build the content.
+        name: Citation # The name option is used as a label for the buttons to add new fieldsets. It is also used as a label in the header of the fieldset, if the label option is not set explicitly (see next line).
+        label: Citation par {{citation}} # Optional. The label option can be used to override the header text of the fieldset. The 'mustache' syntax can be used to include the value of any field of the fieldset.
+        preview: # Optional. If defined, a preview of the fieldset can be rendered by the specified snippet from within the snippets folder.
+          snippet: blocks/quote
+        defaultView: preview # Optional. If the value "preview" is set, the block will show the preview when the page is loaded in the panel. If the value is a tab name, the respective tab is preselected when the page is loaded. Newly created blocks ignore this value and have the edit mode or the first tab preselected.
+        fields:
+          text:
+            label: Citation
+            type: textarea
+          citation:
+            label: Référence de la citation
+            type: text
+
+      list:
+        name: Liste à déplier
+        preview:
+          snippet: blocks/list
+          css: /assets/css/blocks/events.css
+        fields:
+          title: 
+            label: Titre de la section
+            type: text
+          elementlist: # The Builder Field can even be nested!
+            type: builder
+            label: Élément de la liste
+            columns: 1
+            fieldsets:
+              element:
+                label: — {{title}} 
+                fields:
+                  title:
+                    label: Titre à afficher
+                    type: text
+                  titleInfo:
+                    label: Complément d'informations sur le titre
+                    type: textarea
+                  text:
+                    label: Texte
+                    type: textarea
+                  pdfs: 
+                    label: Documents PDFS
+                    type: structure
+                    fields:
+                      title:
+                        label: Titre du PDF (à afficher)
+                        type: text
+                      pdf: 
+                        label: Fichier PDF
+                        type: files
+      pagesgallery:
+        name: Galerie de pages
+        label: Galerie de pages — {{title}}
+        preview:
+          snippet: blocks/pagesgallery
+        defaultView: preview 
+        fields:
+          title:
+            label: Titre à afficher
+            type: text
+          choosepage: 
+            label: Pages du site à afficher
+            type: structure
+            fields: 
+              link: 
+                label: Choisir la page
+                type: select
+                options: query
+                query: site.index
+      imagesgallery:
+        name: Galerie d'images
+        label: Galerie d'images
+        preview:
+          snippet: blocks/imagesgallery
+        defaultView: preview 
+        fields:
+          selectimages:
+            label: Images 
+            type: files
+            query: page.images
+

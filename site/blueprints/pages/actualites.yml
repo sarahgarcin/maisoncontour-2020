@@ -1,0 +1,18 @@
+title: Actualités
+preset: pages
+pages: true
+drafts: 
+  template: actualite
+
+# fields:
+#   group: 
+#     label: Numéro du groupe dans le menu
+#     type: radio
+#     options: 
+#       group1: Groupe 1
+#       group2: Groupe 2
+#       group3: Groupe 3
+#       group4: Groupe 4
+#       group5: Groupe 5
+
+

@@ -1,0 +1,12 @@
+title: Accueil
+preset: page
+pages: false
+
+fields:
+  text: 
+    label: Texte de présentation
+    type: textarea
+    size: small
+    help: Ce court texte s'affichera dans la colonne gauche sur la page d'accueil
+
+

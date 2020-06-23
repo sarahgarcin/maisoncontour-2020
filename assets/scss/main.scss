@@ -1,0 +1,190 @@
+  // I M P O R T
+  // -------------- MOBILE-FIRST --------------
+  @import "_variables.scss";
+
+  *{
+    box-sizing: border-box;
+  	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body{
+  	margin: 0; 
+    font-size: $textSize; 
+    font-family: $font;
+    background: $backgroundColor;
+    line-height: 1.4;
+    color : $textColor;
+    overflow-x: hidden;
+  }
+
+  // -------------- RESET.CSS --------------
+  ul, ol{margin:0; padding:0;}
+  li{list-style:none;}
+  a{color: $mainColor;text-decoration: none;}
+  a:visited{color: $mainColor;}
+  a:hover{color: $mainColor; font-style: italic;}
+  img {width: 100%;}
+  figure{margin:0;}
+  figcaption{
+    font-size: .8em;
+    color: #11214d;
+    p{
+      margin:0; 
+      font-size: .8em;
+      color: #11214d;
+      display: inline-block;
+    }
+  }
+  p{
+    font-size: $textSize; 
+    margin-top: $marginNormal;
+    margin-bottom: $marginNormal;
+
+  }
+  h1{
+    font-size: $titleSize;
+    margin-top:$marginSmall;
+    margin-bottom: $marginNormal;
+    line-height: 1.2;
+    font-weight:normal; 
+    font-style: italic;
+  }
+  h2{
+    margin:0;
+    margin-bottom: $marginNormal;
+    font-size: $h2Size;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1.3;
+  }
+
+  h3{
+    text-decoration:underline;
+    font-size:$textSize; 
+  }
+
+
+  h4{
+    color: $mainColor; 
+    font-weight: 700;
+    margin-bottom: $marginNormal;
+  }
+
+  h5{
+    margin-top: $marginBig;
+    margin-bottom: $marginSmall;
+  }
+
+  blockquote{
+    margin:0;
+    padding:0;
+    font-style: italic; 
+  }
+
+
+  video, iframe{
+    width: 100%;
+  }
+
+
+
+  // -------------- IMPORT TEMPlATES STYLES --------------
+  @import "header.scss";
+  @import "home.scss";
+  @import "article.scss";
+
+
+  // -------------- MOBILE-FIRST GENERAL --------------
+  .show-for-small-only{
+  	display:block;
+  }
+
+  .hide-for-small-only{
+  	display:none;
+  }
+
+  main{
+    padding: 150px $marginNormal 0px $marginNormal; 
+    width: 100%;
+    // max-width: 1000px;
+    margin:auto;
+    font-size: $textSize;
+    margin-bottom: 200px;
+  }
+
+  .sentence-gray-italic{
+    color: $secondColor;
+    font-style: italic; 
+    font-size: $textSize;
+  }
+
+  .top-page{
+    border-bottom: 1px solid $mainColor;
+    margin-left: 1rem;
+  }
+
+  .content-inner{
+    margin-top: $marginBig;
+  }
+
+  .small{
+    font-size: $smallTextSize;
+  }
+
+  .cover{
+    margin-bottom: $marginNormal;
+    margin-right: $marginNormal;
+  }
+
+  section{
+    margin-bottom: $marginBig*2;
+  }
+
+  article{
+    @include grayBorder;
+    margin-top: $marginNormal; 
+    padding-bottom: $marginSmall; 
+    &:first-child{
+      margin-top:0;
+    }
+  }
+
+  .content-to-hide{
+    display:none;
+  }
+
+  // blocks
+  .quote{
+    margin: $marginBig 0 $marginBig $marginBig;
+  }
+
+ 
+
+
+  // -------------- DESKTOP GENERAL --------------
+  @media only screen and (min-width: 48em){
+    .cover {
+      margin:0;
+    }
+    main{
+      padding-top:$marginNormal;
+       width: 90%;
+    }
+    .sidebar{
+      padding-top:8vw;
+    }
+
+
+    .show-for-small-only{
+        display:none !important;
+    }
+    .hide-for-small-only{
+        display:block !important;
+    }
+  }
+
+
+
+
+

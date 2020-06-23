@@ -1,0 +1,22 @@
+title: Actualité
+preset: page
+pages: false
+
+fields:
+  cover: 
+    label: Image de couverture
+    type: files
+  datefield: 
+    label: Date
+    type: date
+  place: 
+    label: Lieu
+    type: text
+  summary: 
+    label: Texte d'accroche
+    type: textarea
+  text:
+    label: Texte
+    type: textarea
+    size: medium
+
