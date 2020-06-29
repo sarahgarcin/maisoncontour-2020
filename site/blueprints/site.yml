@@ -29,9 +29,45 @@ tabs:
             label: Logo du site
             type: files
             multiple: false
+          menu: 
+            label: Organisation du menu 
+            type: headline
+          groupe1: 
+            label: Groupe 1
+            type: checkboxes
+            options: query
+            query: site.children.listed
+            help: Cocher les pages appartenant au premier groupe du menu
+          groupe2: 
+            label: Groupe 2
+            type: checkboxes
+            options: query
+            query: site.children.listed
+            help: Cocher les pages appartenant au deuxième groupe du menu 
+          groupe3: 
+            label: Groupe 3
+            type: checkboxes
+            options: query
+            query: site.children.listed
+            help: Cocher les pages appartenant au troisième groupe du menu 
+          groupe4: 
+            label: Groupe 4
+            type: checkboxes
+            options: query
+            query: site.children.listed
+            help: Cocher les pages appartenant au quatrième groupe du menu 
+          groupe5: 
+            label: Groupe 5
+            type: checkboxes
+            options: query
+            query: site.children.listed
+            help: Cocher les pages appartenant au cinquième groupe du menu 
           old: 
             label: Ancien Site
             type: textarea
+          config: 
+            label: Configuration du site
+            type: headline
           author: 
             label: Auteur
             type: text

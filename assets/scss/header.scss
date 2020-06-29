@@ -10,26 +10,34 @@
 		padding-left:0;
 		ul{
 			padding: 0;
+			.groupe1{
+				font-size: $titleSize;
+				text-transform: uppercase;
+				margin-bottom: 30px;
+			}
+			.groupe2{
+				font-size: $h2Size;
+				margin-bottom: 30px;
+			}
+			.groupe3{
+				font-size: $h2Size;
+				margin-bottom: 30px;
+			}
+			.groupe4{
+				font-size: $textSize;
+				margin-bottom: 30px;
+			}
+			.groupe5{
+				font-size: $textSize;
+				margin-bottom: 30px;
+			}
+			.old-site{
+				p{font-size:13px;}
+			}
 			li{
 				list-style: none;
 				color: $textColor;
 				@include grayBorder;
-				&.group1{
-					font-size: $titleSize;
-					text-transform: uppercase;
-				}
-				&.group2{
-					font-size: $h2Size;
-				}
-				&.group3{
-					font-size: $h2Size;
-				}
-				&.group4{
-					font-size: $textSize;
-				}
-				&.group5{
-					font-size: $textSize;
-				}
 				a{
 					color: $textColor;
 					&:hover{
@@ -50,13 +58,17 @@
 header{
 	// width: 100%;
 	// max-width: 100%;
-	position: absolute;
-	left:0;
-	top:0; 
+	// position: absolute;
+	// left:0;
+	// top:0; 
 	z-index: 100; 
-	&.row{margin:0;}
 	a{text-decoration:none;}
 	.logo{
+		position:absolute;
+		width: 15%;
+		min-width: 180px;
+		top:0;
+		left:0;
 		padding: $marginNormal $marginNormal 0 $marginNormal;
 		h1{
 			font-family: "Maximum", sans-serif;
@@ -71,6 +83,22 @@ header{
 		}
 		a{
 			border:none;
+		}
+	}
+	.menu_btn{
+		position: absolute;
+		right: 8%; 
+		top: 30px;
+		cursor: pointer;
+		text-transform: uppercase;
+		.menu-arrow{
+			display:inline-block;
+			position: relative;
+			top: -2px;
+		} 
+		&:hover{
+			font-style:italic; 
+			color: $mainColor;
 		}
 	}
 	// .mobile-menu{
@@ -104,46 +132,46 @@ header{
 	.nav{
 		max-height:0; 
 		overflow:hidden; 
-		background: #FFF;
-		margin:0;
-		padding-left: 5.5vw;
+		position:absolute;
+		background: $backgroundColor;
 		width: 100%;
-		transition: all 1s linear;
-		font-size: $textSize;
-		font-weight: 500;
+		max-width: 100%;
+		left: 0;
+		top: 20px;
+		transition: all 0.5s ease;
 		&.active{
 			max-height: 100vh; 
-			overflow: auto;
+			// overflow: auto;
 		}
 	}
-	.main-nav{
-		margin-top: $marginSmall;
-		margin-bottom: $marginNormal;
-		padding-left:0;
-		li{
-			list-style: none;
-			color: $textColor;
-			flex: 1 1 0;
-			display: flex;
-			margin-bottom: $marginSmall;
-			a{
-				color: $textColor;
-				&:hover{
-					color: $textColor;
-					border-bottom: 2px solid currentcolor;
-				}
-			}
-			&.active{
-				a{
-					color: $mainColor;
-					border-bottom: 2px solid currentcolor;
-					&::before{
-						background-size: 100% 100%;
-					}
-				}
-			}				
-		}
-	}
+	// .main-nav{
+	// 	margin-top: $marginSmall;
+	// 	margin-bottom: $marginNormal;
+	// 	padding-left:0;
+	// 	li{
+	// 		list-style: none;
+	// 		color: $textColor;
+	// 		flex: 1 1 0;
+	// 		display: flex;
+	// 		margin-bottom: $marginSmall;
+	// 		a{
+	// 			color: $textColor;
+	// 			&:hover{
+	// 				color: $textColor;
+	// 				border-bottom: 2px solid currentcolor;
+	// 			}
+	// 		}
+	// 		&.active{
+	// 			a{
+	// 				color: $mainColor;
+	// 				border-bottom: 2px solid currentcolor;
+	// 				&::before{
+	// 					background-size: 100% 100%;
+	// 				}
+	// 			}
+	// 		}				
+	// 	}
+	// }
 }
 
 
@@ -156,6 +184,11 @@ header{
 				width: 50%;
 				margin:auto;
 			}
+		}
+		.nav{
+			width: 75.333%;
+			max-width: 75.333%;
+			left: 17%;
 		}
 	}
 }

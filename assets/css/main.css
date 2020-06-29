@@ -100,21 +100,28 @@ video, iframe {
     padding-left: 0; }
     .nav .main-nav ul {
       padding: 0; }
+      .nav .main-nav ul .groupe1 {
+        font-size: 40px;
+        text-transform: uppercase;
+        margin-bottom: 30px; }
+      .nav .main-nav ul .groupe2 {
+        font-size: 27px;
+        margin-bottom: 30px; }
+      .nav .main-nav ul .groupe3 {
+        font-size: 27px;
+        margin-bottom: 30px; }
+      .nav .main-nav ul .groupe4 {
+        font-size: 18px;
+        margin-bottom: 30px; }
+      .nav .main-nav ul .groupe5 {
+        font-size: 18px;
+        margin-bottom: 30px; }
+      .nav .main-nav ul .old-site p {
+        font-size: 13px; }
       .nav .main-nav ul li {
         list-style: none;
         color: #212121;
         border-bottom: 0.01em solid #BDBDBD; }
-        .nav .main-nav ul li.group1 {
-          font-size: 40px;
-          text-transform: uppercase; }
-        .nav .main-nav ul li.group2 {
-          font-size: 27px; }
-        .nav .main-nav ul li.group3 {
-          font-size: 27px; }
-        .nav .main-nav ul li.group4 {
-          font-size: 18px; }
-        .nav .main-nav ul li.group5 {
-          font-size: 18px; }
         .nav .main-nav ul li a {
           color: #212121; }
           .nav .main-nav ul li a:hover {
@@ -123,15 +130,15 @@ video, iframe {
           color: red; }
 
 header {
-  position: absolute;
-  left: 0;
-  top: 0;
   z-index: 100; }
-  header.row {
-    margin: 0; }
   header a {
     text-decoration: none; }
   header .logo {
+    position: absolute;
+    width: 15%;
+    min-width: 180px;
+    top: 0;
+    left: 0;
     padding: 20px 20px 0 20px; }
     header .logo h1 {
       font-family: "Maximum", sans-serif;
@@ -144,52 +151,44 @@ header {
       min-width: 50px; }
     header .logo a {
       border: none; }
+  header .menu_btn {
+    position: absolute;
+    right: 8%;
+    top: 30px;
+    cursor: pointer;
+    text-transform: uppercase; }
+    header .menu_btn .menu-arrow {
+      display: inline-block;
+      position: relative;
+      top: -2px; }
+    header .menu_btn:hover {
+      font-style: italic;
+      color: red; }
   header .nav {
     max-height: 0;
     overflow: hidden;
-    background: #FFF;
-    margin: 0;
-    padding-left: 5.5vw;
+    position: absolute;
+    background: #f9f8f7;
     width: 100%;
-    -webkit-transition: all 1s linear;
-    -o-transition: all 1s linear;
-    transition: all 1s linear;
-    font-size: 18px;
-    font-weight: 500; }
+    max-width: 100%;
+    left: 0;
+    top: 20px;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
     header .nav.active {
-      max-height: 100vh;
-      overflow: auto; }
-  header .main-nav {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    padding-left: 0; }
-    header .main-nav li {
-      list-style: none;
-      color: #212121;
-      -webkit-box-flex: 1;
-      -ms-flex: 1 1 0px;
-      flex: 1 1 0;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      margin-bottom: 10px; }
-      header .main-nav li a {
-        color: #212121; }
-        header .main-nav li a:hover {
-          color: #212121;
-          border-bottom: 2px solid currentcolor; }
-      header .main-nav li.active a {
-        color: red;
-        border-bottom: 2px solid currentcolor; }
-        header .main-nav li.active a::before {
-          background-size: 100% 100%; }
+      max-height: 100vh; }
 
 @media only screen and (min-width: 48em) {
   header {
     padding: 0; }
     header .logo .image-logo-wrapper {
       width: 50%;
-      margin: auto; } }
+      margin: auto; }
+    header .nav {
+      width: 75.333%;
+      max-width: 75.333%;
+      left: 17%; } }
 
 .list-projects__th {
   border-bottom: 2px solid #212121;
