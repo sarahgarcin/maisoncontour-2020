@@ -1,6 +1,7 @@
 title: Actualité
 preset: page
 pages: false
+num: '{{ page.datefield.toDate("Ymd") }}'
 
 fields:
   cover: 

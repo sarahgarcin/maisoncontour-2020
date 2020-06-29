@@ -1,8 +1,16 @@
 title: Actualités
-preset: pages
-pages: true
-drafts: 
-  template: actualite
+# preset: pages
+# pages: true
+# drafts: 
+#   template: actualite
+
+sections:
+  listed:
+    headline: Pages
+    type: pages
+    templates: actualite
+    layout: list
+    info: "{{ page.datefield.toDate("d/m/Y") }}"
 
 # fields:
 #   group: 
