@@ -24,7 +24,7 @@
   a{color: $mainColor;text-decoration: none;}
   a:visited{color: $mainColor;}
   a:hover{color: $mainColor; font-style: italic;}
-  img {width: 100%;}
+  img {width: 100%;vertical-align: top;}
   figure{margin:0;}
   figcaption{
     font-size: .8em;
@@ -93,6 +93,8 @@
   @import "header.scss";
   @import "home.scss";
   @import "article.scss";
+  @import "escales.scss";
+  @import "album.scss";
 
 
   // -------------- MOBILE-FIRST GENERAL --------------
@@ -169,7 +171,7 @@
     }
     main{
       padding-top:$marginNormal;
-       width: 95%;
+       width: 96%;
     }
     .sidebar{
       padding-top:8vw;

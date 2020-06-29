@@ -1,7 +1,27 @@
 title: Projets
-preset: pages
-pages: true
-drafts: 
-  template: projet
+# preset: pages
+# pages: true
+# drafts: 
+#   template: projet
+
+sections:
+  content:
+    type: fields
+    fields:
+      tags: 
+        label: Catégories de Projets
+        type: tags
+  drafts:
+    headline: Brouillons
+    type: pages
+    status: draft
+    templates: projet
+
+  published:
+    headline: Publiées
+    type: pages
+    status: listed
+    templates: projet
+
 
 

@@ -1,0 +1,38 @@
+.list-projects__th{
+	border-bottom: 2px solid $textColor;
+	padding-bottom: $marginSmall;
+}
+
+.list-projects-content{
+	article{
+		margin-top:0;
+		// height: 200px;
+		// overflow: hidden;
+		padding-bottom: $marginNormal;
+	}
+}
+
+.list-project__details__inner{
+	margin-left:0;
+} 
+
+.list-project__td{
+	padding-right:0;
+	h2{
+		font-size: $textSize;
+		margin-top: $marginNormal;
+	}
+}
+
+.list-project__td--distrbution, .list-project__td--partenaires{
+	p{
+		font-size: $smallTextSize;
+	}
+}
+
+@media only screen and (min-width: 48em){
+	.list-project__details__inner{
+		margin-left:-1rem;
+	} 
+
+}

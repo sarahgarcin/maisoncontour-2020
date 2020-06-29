@@ -9,20 +9,26 @@
 				<h1><?=$page->title()?></h1>
 			</div>
 			<div class="content-inner list-projects col-xs-12">
-				<div class="list-projects__th list-projects__th--desktop">
+				<div class="list-projects__th hide-for-small-only">
 					<div class="list-projects__details">
 						<div class="list-projects__details__inner row">
 							<div class="list-projects__td list-projects__td--date col-md-2">
-								<a href="<?=$site->url()?>/sort:date" title="Date">Date</a>
+								<!-- <a href="<?=$page->url()?>/sort:date" title="Date"> -->
+									Date
+								<!-- </a> -->
 							</div>
 							<div class="list-projects__td list-projects__td--topography col-md-2">
 								Topographie
 							</div>
 							<div class="list-projects__td list-projects__td--place col-md-2">
-								<a href="<?=$site->url()?>/sort:place" title="Lieu">Lieu</a>
+								<!-- <a href="<?=$page->url()?>/sort:place" title="Lieu"> -->
+									Lieu
+								<!-- </a> -->
 							</div>
 							<div class="list-projects__td list-projects__td--title col-md-2">
-								<a href="<?=$site->url()?>/sort:title" title="Titre">Titre</a>
+								<!-- <a href="<?=$page->url()?>/sort:title" title="Titre"> -->
+									Titre
+								<!-- </a> -->
 							</div>
 							<div class="list-projects__td list-projects__td--distribution col-md-2">Distribution</div>
 							<div class="list-projects__td list-projects__td--partenaires col-md-2">Partenaires</div>
@@ -34,6 +40,10 @@
 					$projects = $site->index()->find('projets');
 					
 					// sort by category
+					// $projects = $projects->children()->listed()->sortBy(function ($page) {
+					// 	echo $page->time()->toDate();
+					//   return $page->time()->toDate();
+					// }, 'desc');
 					// $projects = $projects->sortBy('time');
 					// if($sort = param('sort')) {
   			// 		$projects = $projects->sortBy($sort);
@@ -42,11 +52,9 @@
 		    <?php foreach ($projects->children()->listed() as $project): ?>
 		    	<article>
 			    	<div class="list-project__details__inner row">
-							<div class="list-project__td list-project__td--date col-md-2">
-								<h3>
-									<?= $project->time()->toDate('d.m.Y') ?>
-								</h3>
-							</div>
+							<p class="list-project__td list-project__td--date col-md-2">
+								<?= $project->time()->toDate('d.m.Y') ?>
+							</p>
 							<p class="list-project__td col-md-2">
 									<?= $project->topography() ?>	
 							</p>

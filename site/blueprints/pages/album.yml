@@ -1,0 +1,11 @@
+title: Album
+
+
+sections: 
+  escales: 
+    type: info
+    headline: Info
+    text: |
+      Cette page n'a pas de contenu, elle récupère les projets et les affichent en liste. 
+
+

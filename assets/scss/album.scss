@@ -1,0 +1,55 @@
+.sidebar{
+	.tags{
+		margin-top: $marginBig;
+		padding-left: $marginNormal;
+		li{
+			font-size:$smallTextSize;
+			@include grayBorder;
+			padding-top: $marginSmall/2;
+			padding-bottom: $marginSmall/2;
+			text-transform: capitalize;
+			cursor: pointer; 
+			&:hover, &.active{
+				color: $mainColor; 
+				border-bottom: 1px solid $mainColor;
+			}
+		}
+	}
+}
+
+
+.list-projects-content{
+	margin-left:0;
+}
+
+.album-project{
+	padding: 0;
+	margin:0;
+	opacity:1;
+	transition: opacity 0.2s ease;
+	&.hide{
+		opacity: 0;
+	}
+	.album-project-info{
+		position: absolute; 
+		background: #FFF; 
+		border-top:  0.01em solid #BDBDBD;
+		border-bottom: 0.01em solid #BDBDBD;
+		padding: $marginNormal;
+		display:none;
+		z-index: 99;
+		h3, p{
+			font-size: $smallTextSize;
+			font-weight:normal; 
+			text-decoration:none;
+			margin:0;
+			margin-bottom:5px;
+		}
+		h2{
+			font-size: $textSize; 
+			margin:0;
+			margin-bottom:5px;
+		}
+	}
+
+}
