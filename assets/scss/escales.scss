@@ -5,10 +5,18 @@
 
 .list-projects-content{
 	article{
+		hyphens: auto;
 		margin-top:0;
-		// height: 200px;
-		// overflow: hidden;
+		max-height: 180px;
+		overflow: hidden;
 		padding-bottom: $marginNormal;
+		&:hover{
+			cursor: pointer;
+			.list-project__td--date {
+				color: $mainColor;
+				font-style: italic;
+			}
+		}
 	}
 }
 

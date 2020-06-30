@@ -21,6 +21,24 @@ function init(){
 
 	});
 
+	//  -------------- Actualité ---------------
+	// déplier actualités
+	$('.actualite h2').on('click', function(){
+		
+		$('.actualite').find('.content-to-hide').removeClass('active');
+		if($(this).hasClass('active')){
+			$(this).removeClass('active');
+		}
+		else{
+			$('.actualite h2').removeClass('active');
+			$(this).addClass('active');
+			$(this).parents('.actualite').find('.content-to-hide').addClass('active');
+
+		}
+		
+		
+	});
+
 
 	// -------------- ALBUM ---------------
 	// positionnement des infos au survol

@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  font-size: 18px;
+  font-size: 17px;
   font-family: "Concorde BQ", serif;
   background: #f9f8f7;
   line-height: 1.4;
@@ -48,7 +48,7 @@ figcaption {
     display: inline-block; }
 
 p {
-  font-size: 18px;
+  font-size: 17px;
   margin-top: 20px;
   margin-bottom: 20px; }
 
@@ -70,7 +70,7 @@ h2 {
 
 h3 {
   text-decoration: underline;
-  font-size: 18px; }
+  font-size: 17px; }
 
 h4 {
   color: red;
@@ -92,7 +92,7 @@ video, iframe {
 .nav {
   margin: 0;
   width: 100%;
-  font-size: 18px;
+  font-size: 17px;
   padding: 0; }
   .nav .main-nav {
     margin-top: 10px;
@@ -111,10 +111,10 @@ video, iframe {
         font-size: 27px;
         margin-bottom: 30px; }
       .nav .main-nav ul .groupe4 {
-        font-size: 18px;
+        font-size: 17px;
         margin-bottom: 30px; }
       .nav .main-nav ul .groupe5 {
-        font-size: 18px;
+        font-size: 17px;
         margin-bottom: 30px; }
       .nav .main-nav ul .old-site p {
         font-size: 13px; }
@@ -195,8 +195,18 @@ header {
   padding-bottom: 10px; }
 
 .list-projects-content article {
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
   margin-top: 0;
+  max-height: 180px;
+  overflow: hidden;
   padding-bottom: 20px; }
+  .list-projects-content article:hover {
+    cursor: pointer; }
+    .list-projects-content article:hover .list-project__td--date {
+      color: red;
+      font-style: italic; }
 
 .list-project__details__inner {
   margin-left: 0; }
@@ -204,11 +214,11 @@ header {
 .list-project__td {
   padding-right: 0; }
   .list-project__td h2 {
-    font-size: 18px;
+    font-size: 17px;
     margin-top: 20px; }
 
 .list-project__td--distrbution p, .list-project__td--partenaires p {
-  font-size: 15px; }
+  font-size: 14px; }
 
 @media only screen and (min-width: 48em) {
   .list-project__details__inner {
@@ -218,7 +228,7 @@ header {
   margin-top: 40px;
   padding-left: 20px; }
   .sidebar .tags li {
-    font-size: 15px;
+    font-size: 14px;
     border-bottom: 0.01em solid #BDBDBD;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -249,15 +259,22 @@ header {
     display: none;
     z-index: 99; }
     .album-project .album-project-info h3, .album-project .album-project-info p {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: normal;
       text-decoration: none;
       margin: 0;
       margin-bottom: 5px; }
     .album-project .album-project-info h2 {
-      font-size: 18px;
+      font-size: 17px;
       margin: 0;
       margin-bottom: 5px; }
+
+.actualite h2:hover {
+  color: red;
+  cursor: pointer; }
+
+.actualite h2.active {
+  color: red; }
 
 .show-for-small-only {
   display: block; }
@@ -269,27 +286,39 @@ main {
   padding: 150px 20px 0px 20px;
   width: 100%;
   margin: auto;
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 200px; }
 
 .sentence-gray-italic {
   color: #646464;
   font-style: italic;
-  font-size: 18px; }
+  font-size: 17px; }
 
 .top-page {
   border-bottom: 1px solid red;
   margin-left: 1rem; }
 
+body[data-template='actualites'] .top-page, body[data-template='escales'] .top-page, body[data-template='album'] .top-page {
+  text-transform: uppercase; }
+
 .content-inner {
   margin-top: 40px; }
 
 .small {
-  font-size: 15px; }
+  font-size: 14px; }
 
 .cover {
   margin-bottom: 20px;
   margin-right: 20px; }
+
+.image-same-height {
+  height: 150px;
+  text-align: left;
+  padding: 10px;
+  margin-left: 1rem; }
+  .image-same-height img {
+    width: auto;
+    max-height: 100%; }
 
 section {
   margin-bottom: 80px; }
@@ -302,7 +331,16 @@ article {
     margin-top: 0; }
 
 .content-to-hide {
-  display: none; }
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+  .content-to-hide.active {
+    max-height: 600px;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
 
 .quote {
   margin: 40px 0 40px 40px; }

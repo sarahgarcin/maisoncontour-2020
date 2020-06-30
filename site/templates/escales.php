@@ -77,7 +77,7 @@
 								<div class="photoswipe project__image" itemscope itemtype="http://schema.org/ImageGallery">
 									<div class="row">
 									  <?php foreach ($project->images() as $image): ?>
-									    <figure class="col-xs-6 col-md-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+									    <figure class="image-same-height" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
 									        <a href="<?= $image->url(); ?>" itemprop="contentUrl" data-size="<?= $image->width(); ?>x<?= $image->height(); ?>"
 									           title="<?= $image->text()->value(); ?>">
 									            <img src="<?= $image->url(); ?>" itemprop="thumbnail"

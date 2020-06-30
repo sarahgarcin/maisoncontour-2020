@@ -95,6 +95,7 @@
   @import "article.scss";
   @import "escales.scss";
   @import "album.scss";
+  @import "actu.scss";
 
 
   // -------------- MOBILE-FIRST GENERAL --------------
@@ -126,6 +127,10 @@
     margin-left: 1rem;
   }
 
+  body[data-template='actualites'] .top-page, body[data-template='escales'] .top-page, body[data-template='album'] .top-page{
+    text-transform:uppercase;
+  }
+
   .content-inner{
     margin-top: $marginBig;
   }
@@ -137,6 +142,18 @@
   .cover{
     margin-bottom: $marginNormal;
     margin-right: $marginNormal;
+  }
+
+  .image-same-height{
+    height: 150px;
+    text-align: left;
+    padding: $marginSmall;
+    margin-left: 1rem;
+    
+    img {
+      width:auto;
+      max-height: 100%;
+    }
   }
 
   section{
@@ -153,7 +170,16 @@
   }
 
   .content-to-hide{
-    display:none;
+    // display:none;
+    // height: 0; 
+    max-height:0; 
+    overflow: hidden;
+    transition: all 0.5s ease;
+    &.active{
+      max-height: 600px;
+      transition: all 0.5s ease;
+
+    }
   }
 
   // blocks

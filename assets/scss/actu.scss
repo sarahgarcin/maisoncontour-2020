@@ -1,0 +1,9 @@
+.actualite h2{
+	&:hover{
+		color: $mainColor;
+		cursor: pointer; 
+	}
+	&.active{
+		color: $mainColor;
+	}
+}
