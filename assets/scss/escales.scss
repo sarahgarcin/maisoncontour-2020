@@ -1,15 +1,55 @@
 .list-projects__th{
-	border-bottom: 2px solid $textColor;
+	border-bottom: 0.12em solid $textColor;
 	padding-bottom: $marginSmall;
+	font-size: $smallTextSize;
+}
+
+// taille des colonnes
+.list-projects__td--date, .list-project__td--date{
+	max-width: 10%;
+	flex-basis: 10%;
+}
+
+.list-projects__td--topography, .list-project__td--topography{
+	max-width: 20%;
+	flex-basis: 20%;
+}
+
+.list-projects__td--place, .list-project__td--place{
+	max-width: 15%;
+	flex-basis: 15%;
+}
+
+.list-projects__td--title, .list-project__td--title{
+	max-width: 18%;
+	flex-basis: 18%;
+}
+
+.list-projects__td--distribution, .list-project__td--distribution{
+	max-width: 18.5%;
+	flex-basis: 18.5%;
+}
+
+.list-projects__td--partenaires, .list-project__td--partenaires{
+	max-width: 18.5%;
+	flex-basis: 18.5%;
 }
 
 .list-projects-content{
+	.list-project__td--distribution, .list-project__td--partenaires{
+		p{
+			font-size: 12px;
+		}
+	}
 	article{
+		font-size: $smallTextSize;
+		p, h2{font-size: $smallTextSize;}
 		hyphens: auto;
 		margin-top:0;
 		max-height: 180px;
 		overflow: hidden;
 		padding-bottom: $marginNormal;
+		transition: all 0.5s ease;
 		&:hover{
 			cursor: pointer;
 			.list-project__td--date {
@@ -17,7 +57,16 @@
 				font-style: italic;
 			}
 		}
+		&.active{
+			max-height: 800px;
+			transition: all 0.5s ease;
+			.list-project__td--date {
+				color: $mainColor;
+				font-style: italic;
+			}
+		}
 	}
+
 }
 
 .list-project__details__inner{
@@ -25,18 +74,13 @@
 } 
 
 .list-project__td{
-	padding-right:0;
+	// padding-right:0;
 	h2{
 		font-size: $textSize;
 		margin-top: $marginNormal;
 	}
 }
 
-.list-project__td--distrbution, .list-project__td--partenaires{
-	p{
-		font-size: $smallTextSize;
-	}
-}
 
 @media only screen and (min-width: 48em){
 	.list-project__details__inner{

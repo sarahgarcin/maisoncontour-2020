@@ -39,6 +39,22 @@ function init(){
 		
 	});
 
+		//  -------------- Escales ---------------
+	// déplier escales
+	$('.list-projects article').on('click', function(){
+		
+		if($(this).hasClass('active')){
+			$(this).removeClass('active');
+		}
+		else{
+			$('.list-projects article').removeClass('active');
+			$(this).addClass('active');
+
+		}
+		
+		
+	});
+
 
 	// -------------- ALBUM ---------------
 	// positionnement des infos au survol

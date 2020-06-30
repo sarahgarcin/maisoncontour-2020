@@ -12,7 +12,7 @@
 				<div class="list-projects__th hide-for-small-only">
 					<div class="list-projects__details">
 						<div class="list-projects__details__inner row">
-							<div class="list-projects__td list-projects__td--date col-md-2">
+							<div class="list-projects__td list-projects__td--date col-md-1">
 								<!-- <a href="<?=$page->url()?>/sort:date" title="Date"> -->
 									Date
 								<!-- </a> -->
@@ -52,23 +52,23 @@
 		    <?php foreach ($projects->children()->listed() as $project): ?>
 		    	<article>
 			    	<div class="list-project__details__inner row">
-							<p class="list-project__td list-project__td--date col-md-2">
+							<p class="list-project__td list-project__td--date col-md-1">
 								<?= $project->time()->toDate('d.m.Y') ?>
 							</p>
-							<p class="list-project__td col-md-2">
+							<p class="list-project__td list-project__td--topography col-md-2">
 									<?= $project->topography() ?>	
 							</p>
-							<p class="list-project__td col-md-2">
+							<p class="list-project__td list-project__td--place col-md-2">
 									<?= $project->place() ?>
 							</p>
 							<div class="list-project__td list-project__td--title col-md-2">
 								<h2><?= $project->title() ?></h2>
 								<?= $project->text()->kt() ?>
 							</div>
-							<div class="list-project__td list-project__td--distrbution col-md-2">
+							<div class="list-project__td list-project__td--distribution col-md-2">
 								<?= $project->distribution()->kt() ?>
 							</div>
-							<div class="list-project__td list-project__td--partenaires col-md-2">
+							<div class="list-project__td list-project__td--partenaires col-md-3">
 								<?= $project->partenaires()->kt() ?>
 							</div>							
 						</div>
