@@ -26,7 +26,17 @@
   a:hover{color: $mainColor; font-style: italic;}
   img {width: 100%;vertical-align: top;}
   figure{margin:0;}
-  figcaption, .audiocaption{
+  figcaption {
+    max-width: 170px;
+    p{
+      font-style: italic;
+      font-size: 12px;
+      color: $secondColor;
+      margin-top:5px; 
+    }
+
+  }
+  .audiocaption{
     font-size: $textSize;
     font-style: italic; 
 
@@ -127,6 +137,9 @@
   .top-page{
     border-bottom: 1px solid $mainColor;
     margin-left: 1rem;
+    h1{
+      max-width: 80%;
+    }
   }
 
   body[data-template='actualites'] .top-page, body[data-template='escales'] .top-page, body[data-template='album'] .top-page{
@@ -234,6 +247,26 @@
       max-height: 800px;
       transition: all 0.5s ease;
 
+    }
+  }
+
+  .table-of-contents{
+    margin-top: $marginBig;
+    position:fixed;
+    width:inherit;
+    max-width:inherit;
+    li{
+      width: 85%;
+      font-size: 12px;
+      padding-top: 5px;
+      padding-bottom:5px;
+      @include grayBorder;
+      a{
+        color: $textColor; 
+        &:hover{
+          color: $mainColor;
+        }
+      }
     }
   }
 
@@ -351,6 +384,18 @@
         margin-bottom: $marginSmall;
       }
     }
+    & + .imagesgallery{
+      margin-top: -30px;
+    }
+  }
+
+  .imagesgallery{
+    ul{
+      margin-left: -10px;
+    }
+    .image-same-height{
+      height: 200px;
+    }
   }
 
   .pagesgallery{
@@ -402,6 +447,9 @@
     }
     .sidebar{
       padding-top:8vw;
+      position: relative;
+      width:100%;
+      max-width:16.667%;
     }
 
 

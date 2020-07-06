@@ -1,6 +1,8 @@
 <section class="projectsgallery">
 
-	<h2><?= $data->title() ?></h2>
+	<?php if($data->title()->isNotEmpty()):?>
+		<h2 id="<?= Str::slug($data->title())?>"><?= $data->title() ?></h2>
+	<?php endif;?>
 	<ul class="row">
 	<?php foreach($data->choosepage()->toStructure() as $el):?>
 		<li class="row">

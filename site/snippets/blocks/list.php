@@ -1,5 +1,7 @@
 <section class="list">
-	<h2><?= $data->title() ?></h2>
+	<?php if($data->title()->isNotEmpty()):?>
+		<h2 id="<?= Str::slug($data->title())?>"><?= $data->title() ?></h2>
+	<?php endif;?>
 	<?php 
 		foreach($data->elementlist()->toBuilderBlocks() as $el):?>
 		 <article>

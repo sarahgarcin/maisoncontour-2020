@@ -39,7 +39,15 @@ img {
 figure {
   margin: 0; }
 
-figcaption, .audiocaption {
+figcaption {
+  max-width: 170px; }
+  figcaption p {
+    font-style: italic;
+    font-size: 12px;
+    color: #646464;
+    margin-top: 5px; }
+
+.audiocaption {
   font-size: 17px;
   font-style: italic; }
 
@@ -135,11 +143,12 @@ header {
   header a {
     text-decoration: none; }
   header .logo {
-    position: absolute;
+    position: fixed;
     width: 15%;
     min-width: 180px;
     top: 0;
     left: 0;
+    z-index: 201;
     padding: 20px 20px 0 20px; }
     header .logo h1 {
       font-family: "Maximum", sans-serif;
@@ -153,9 +162,11 @@ header {
     header .logo a {
       border: none; }
   header .menu_btns {
-    position: absolute;
+    position: fixed;
     right: 8%;
-    top: 30px; }
+    top: 0px;
+    z-index: 200;
+    padding-top: 20px; }
     header .menu_btns .menu_btn {
       cursor: pointer;
       text-transform: uppercase; }
@@ -186,17 +197,21 @@ header {
   header .nav {
     max-height: 0;
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     background: #f9f8f7;
     width: 100%;
     max-width: 100%;
     left: 0;
-    top: 20px;
+    top: 0px;
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
-    transition: all 0.5s ease; }
+    transition: all 0.5s ease;
+    z-index: 100;
+    padding: 0; }
     header .nav.active {
-      max-height: 100vh; }
+      max-height: 100vh;
+      overflow: auto;
+      padding-top: 20px; }
 
 @media only screen and (min-width: 48em) {
   header {
@@ -379,6 +394,8 @@ main {
 .top-page {
   border-bottom: 1px solid red;
   margin-left: 1rem; }
+  .top-page h1 {
+    max-width: 80%; }
 
 body[data-template='actualites'] .top-page, body[data-template='escales'] .top-page, body[data-template='album'] .top-page {
   text-transform: uppercase; }
@@ -463,6 +480,22 @@ article {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease; }
 
+.table-of-contents {
+  margin-top: 40px;
+  position: fixed;
+  width: inherit;
+  max-width: inherit; }
+  .table-of-contents li {
+    width: 85%;
+    font-size: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 0.01em solid #BDBDBD; }
+    .table-of-contents li a {
+      color: #212121; }
+      .table-of-contents li a:hover {
+        color: red; }
+
 .pdf {
   font-size: 14px;
   display: block;
@@ -542,6 +575,15 @@ article {
   margin-left: 20px;
   margin-bottom: 10px; }
 
+.bodytext + .imagesgallery {
+  margin-top: -30px; }
+
+.imagesgallery ul {
+  margin-left: -10px; }
+
+.imagesgallery .image-same-height {
+  height: 200px; }
+
 .pagesgallery li a figcaption {
   color: #212121; }
 
@@ -569,7 +611,10 @@ article {
     padding-top: 20px;
     width: 96%; }
   .sidebar {
-    padding-top: 8vw; }
+    padding-top: 8vw;
+    position: relative;
+    width: 100%;
+    max-width: 16.667%; }
   .show-for-small-only {
     display: none !important; }
   .hide-for-small-only {

@@ -6,7 +6,7 @@
 					<?php $p = $site->index()->find($p)?>
 					<li class="<?= r($p->isOpen(), ' active') ?>">
 	        	<a href="<?= $p->url()?>" title="<?= $p->title()?>">
-	        		<?= $p->title()->html() ?>
+	        		<?= $p->title() ?>
 	        	</a>
 	      	</li>
 				<?php endforeach;?>
@@ -16,7 +16,7 @@
 					<?php $p = $site->index()->find($p)?>
 					<li class="<?= r($p->isOpen(), ' active') ?>">
 	        	<a href="<?= $p->url()?>" title="<?= $p->title()?>">
-	        		<?= $p->title()->html() ?>
+	        		<?= $p->title() ?>
 	        	</a>
 	      	</li>
 				<?php endforeach;?>
@@ -26,7 +26,7 @@
 					<?php $p = $site->index()->find($p)?>
 					<li class="<?= r($p->isOpen(), ' active') ?>">
 	        	<a href="<?= $p->url()?>" title="<?= $p->title()?>">
-	        		<?= $p->title()->html() ?>
+	        		<?= $p->title() ?>
 	        	</a>
 	      	</li>
 				<?php endforeach;?>
@@ -36,7 +36,7 @@
 					<?php $p = $site->index()->find($p)?>
 					<li class="<?= r($p->isOpen(), ' active') ?>">
 	        	<a href="<?= $p->url()?>" title="<?= $p->title()?>">
-	        		<?= $p->title()->html() ?>
+	        		<?= $p->title() ?>
 	        	</a>
 	      	</li>
 				<?php endforeach;?>
@@ -46,7 +46,7 @@
 					<?php $p = $site->index()->find($p)?>
 					<li class="<?= r($p->isOpen(), ' active') ?>">
 	        	<a href="<?= $p->url()?>" title="<?= $p->title()?>">
-	        		<?= $p->title()->html() ?>
+	        		<?= $p->title() ?>
 	        	</a>
 	      	</li>
 				<?php endforeach;?>
@@ -58,7 +58,7 @@
 			<!-- <?php foreach($pages->listed() as $p): ?>
 				<li class="<?= $p->group() ?><?= r($p->isOpen(), ' active') ?>">
 	        	<a href="<?= $p->url()?>" title="<?= $p->title()?>">
-	        		<?= $p->title()->html() ?>
+	        		<?= $p->title() ?>
 	        	</a>
 	      </li>
 			<?php endforeach; ?> -->

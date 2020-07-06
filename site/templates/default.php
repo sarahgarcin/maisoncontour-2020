@@ -3,6 +3,11 @@
 	
 	<main class='row'>
 		<div class="sidebar col-xs-12 col-md-2">
+			<div class="table-of-contents">
+				<ul>
+
+				</ul>
+			</div>
 		</div>
 		<div class="content col-xs-12 col-md-10">
 			<div class="top-page">

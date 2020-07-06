@@ -1,11 +1,11 @@
 <section class="imagesgallery">
 	<?php if($data->title()->isNotEmpty()):?>
-		<h2><?= $data->title() ?></h2>
+		<h2 id="<?= Str::slug($data->title())?>"><?= $data->title() ?></h2>
 	<?php endif;?>
 	<ul class="row">
 	<?php foreach($data->selectimages()->toFiles() as $image):?>
-		<li class="col-xs-6 col-md-4">
-			<figure>
+		<li>
+			<figure class="image-same-height">
 			<?= $image->thumb([
 		      'width'   => 300,
 		      'height'  => 200,

@@ -134,17 +134,15 @@ function init(){
     stopOthersOnPlay: true,
     enableKeystrokes: true
 	});
-	// });
 
 
-	// custom audio player
-	// document.addEventListener('DOMContentLoaded', function() {
-	//   new GreenAudioPlayer('.audioplayer',{
-	//     // selector: '.audioplayer',
-	//     stopOthersOnPlay: true,
-	//     enableKeystrokes: true
-	// 	});
-	// });
+	// générer un sommaire
+	$('body[data-template="default"] h2').each(function(){
+		var title = $(this).html();
+		var anchor = $(this).attr('id');
+		var htmlToAdd = '<li><a href="#'+anchor+'">'+title+'</a></li>'
+		$('.sidebar .table-of-contents ul').append(htmlToAdd)
+	});
 
 }
 
