@@ -55,9 +55,9 @@
 							<p class="list-project__td list-project__td--date col-md-1">
 								<?= $project->time()->toDate('d.m.Y') ?>
 							</p>
-							<p class="list-project__td list-project__td--topography col-md-2">
-									<?= $project->topography() ?>	
-							</p>
+							<div class="list-project__td list-project__td--topography col-md-2">
+								<?= $project->topography()->chopper(22, 'words', '…') ?>	
+							</div>
 							<p class="list-project__td list-project__td--place col-md-2">
 									<?= $project->place() ?>
 							</p>
@@ -66,10 +66,13 @@
 								<?= $project->text()->kt() ?>
 							</div>
 							<div class="list-project__td list-project__td--distribution col-md-2">
-								<?= $project->distribution()->kt() ?>
+								<?= $project->distribution()->chopper(18, 'words', '…')?>
 							</div>
 							<div class="list-project__td list-project__td--partenaires col-md-3">
-								<?= $project->partenaires()->kt() ?>
+								<div class="chopper"><?= $project->partenaires()->chopper(20, 'words', '…') ?></div>
+								<div class="entire">
+									<?= $project->partenaires()->kt() ?>
+								</div>
 							</div>							
 						</div>
 						<?php if($project->hasImages()):?>

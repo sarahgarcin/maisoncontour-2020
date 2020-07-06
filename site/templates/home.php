@@ -1,6 +1,9 @@
 <?php snippet('header') ?>
 <header role="banner" class="col-xs-4 col-md-2">
 	<?php snippet('logo')?>
+	<div class="menu_btns">
+		<?php snippet('languages')?>
+	</div>
 </header>
 
 	

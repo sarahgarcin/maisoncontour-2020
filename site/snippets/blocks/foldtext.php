@@ -1,4 +1,4 @@
-<section class="bodytext">
+<section class="bodytext foldtext">
 
 	<h2><?= $data->title() ?></h2>
 	<?= $data->summary()->kt() ?>

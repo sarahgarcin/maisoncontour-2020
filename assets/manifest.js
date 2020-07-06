@@ -12,7 +12,9 @@ User settings for GUlp
 module.exports.pluginScripts = [
   'node_modules/jquery/dist/jquery.js',
   'node_modules/photoswipe/dist/photoswipe.min.js', 
-  'node_modules/photoswipe/dist/photoswipe-ui-default.min.js'
+  'node_modules/photoswipe/dist/photoswipe-ui-default.min.js', 
+  'assets/js/green-audio-player.min.js'
+
 ];
 
 /* List all the Styles plugin files you are using in `pluginStyles`
@@ -20,8 +22,9 @@ module.exports.pluginScripts = [
  */
 module.exports.pluginStyles = [
   'node_modules/font-awesome/css/font-awesome.css', 
-   'node_modules/photoswipe/dist/photoswipe.css', 
-  'node_modules/photoswipe/dist/default-skin/default-skin.css'
+  'node_modules/photoswipe/dist/photoswipe.css', 
+  'node_modules/photoswipe/dist/default-skin/default-skin.css', 
+  'assets/css/green-audio-player.css'
 ];
 
 /* List all your JavaScript file in `userScripts` to define

@@ -10,6 +10,7 @@ Kirby Configuration
 return [
   'environment' => 'local',
   'debug'  => true,
+  'languages' => true,
   'thumbs' => [
   	'autoOrient' => true,
     'srcsets' => [

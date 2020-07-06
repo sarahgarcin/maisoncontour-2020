@@ -26,15 +26,10 @@
   a:hover{color: $mainColor; font-style: italic;}
   img {width: 100%;vertical-align: top;}
   figure{margin:0;}
-  figcaption{
-    font-size: .8em;
-    color: #11214d;
-    p{
-      margin:0; 
-      font-size: .8em;
-      color: #11214d;
-      display: inline-block;
-    }
+  figcaption, .audiocaption{
+    font-size: $textSize;
+    font-style: italic; 
+
   }
   p{
     font-size: $textSize; 
@@ -48,7 +43,7 @@
     margin-bottom: $marginNormal;
     line-height: 1.2;
     font-weight:normal; 
-    font-style: italic;
+    // font-style: italic;
   }
   h2{
     margin:0;
@@ -62,8 +57,15 @@
   h3{
     text-decoration:underline;
     font-size:$textSize; 
+    font-style: italic;
+    font-weight: normal;
+    margin-bottom: $marginSmall;
   }
 
+  h3 + p{
+    margin-top: 0;
+  }
+        
 
   h4{
     color: $mainColor; 
@@ -145,10 +147,10 @@
   }
 
   .image-same-height{
-    height: 150px;
+    height: 142px;
     text-align: left;
     padding: $marginSmall;
-    margin-left: 1rem;
+    // margin-left: 0.5rem;
     
     img {
       width:auto;
@@ -156,8 +158,37 @@
     }
   }
 
+  .audioplayer{
+    background-color: transparent; 
+    box-shadow: none;
+    padding-left: 0;
+    margin-bottom: $marginNormal; 
+    .holder{
+      .play-pause-btn__icon{
+        fill: $mainColor;
+      } 
+    }
+    .slider .gap-progress .pin{
+      background-color: $secondColor;
+    }
+    .slider .gap-progress{
+      background-color: $mainColor;
+    }
+    .controls{
+      font-family: $font;
+      color: $secondColor;
+      font-size: $smallTextSize;
+    }
+    audio{
+      display:none;
+    }
+    .volume{
+      display:none;
+    }
+  }
+
   section{
-    margin-bottom: $marginBig*2;
+    margin-bottom: $marginBig;
   }
 
   article{
@@ -169,6 +200,30 @@
     }
   }
 
+  .more-btn{
+    margin-top: $marginNormal; 
+    padding-bottom: $marginSmall;
+    cursor: pointer;
+    &:hover{
+      color: $mainColor; 
+      font-style: italic;
+    }
+    &.active{
+      color: $mainColor; 
+      font-style: italic;
+      &::after{
+        content:'↑'; 
+      }
+    }
+    &::after{
+      content:'↓'; 
+      color: $mainColor;
+      margin-left: $marginNormal;
+      position: relative;
+      top: -2px;
+    } 
+  }
+
   .content-to-hide{
     // display:none;
     // height: 0; 
@@ -176,16 +231,162 @@
     overflow: hidden;
     transition: all 0.5s ease;
     &.active{
-      max-height: 600px;
+      max-height: 800px;
       transition: all 0.5s ease;
 
     }
   }
 
-  // blocks
-  .quote{
-    margin: $marginBig 0 $marginBig $marginBig;
+  .pdf{
+    font-size: $smallTextSize;
+    display: block;
+    padding-left: 30px;
+    color: $textColor;
+    &::before{
+      content: url("../images/picto-pdf.svg");
+      margin-left: -30px;
+      position: relative; 
+      top: 8px; 
+      margin-right: 10px; 
+    }
+    &:hover{
+      color: $mainColor; 
+    } 
   }
+
+  // blocks
+  .quote, blockquote{
+    margin: $marginNormal 0 $marginBig $marginBig;
+  }
+
+  .list{
+    h2{
+      margin-bottom: $marginBig; 
+    }
+    article{
+      padding: 0; 
+      margin:0; 
+      margin-top: $marginNormal; 
+      padding-bottom: $marginNormal; 
+      cursor: pointer; 
+      &:hover{
+        h3{
+          color: $mainColor; 
+          font-style: italic;
+        }
+      }
+      &.active{
+        h3{
+          color: $mainColor; 
+          font-style: italic;
+          &::after{
+            content:'↑'; 
+          }
+        }
+      }
+      h3{
+        text-decoration: none; 
+        font-weight:normal;
+        font-style: normal;
+        margin:0;
+        &::after{
+          content:'↓'; 
+          color: $mainColor;
+          margin-left: $marginNormal;
+          position: relative;
+          top: -2px;
+        }
+      }
+      .content-to-hide{
+        h3{
+          color: $textColor;
+          text-decoration: underline;
+          margin-bottom: $marginSmall;
+          &::after{
+            content:"";
+          }
+        }
+        .list_title-info{
+          p{
+            font-size: $smallTextSize;
+            font-style: italic;
+            margin-top:0;
+          }
+        }
+        .list_pdfs{
+          font-size: $smallTextSize;
+          li{
+            padding-left: 30px;
+            margin-left: 5px;
+            &::before{
+              content: url("../images/picto-pdf.svg");
+              margin-left: -30px;
+              position: relative; 
+              top: 10px; 
+            }
+          }
+          a{
+            color: $textColor;
+            margin-left: 10px;
+
+            &:hover{
+              color: $mainColor; 
+            }
+          } 
+        }
+      }
+    }
+
+  }
+
+  .foldtext{
+    @include grayBorder;
+  }
+
+  .bodytext{
+    ul{
+      li{
+        list-style: disc;
+        margin-left: $marginNormal;
+        margin-bottom: $marginSmall;
+      }
+    }
+  }
+
+  .pagesgallery{
+    li{
+      a{
+        figcaption{
+          color: $textColor;
+        }
+        &:hover figcaption{
+          color: $mainColor;
+        }
+        
+      }
+    }
+  }
+
+  .projectsgallery{
+    ul{
+      margin:0;
+    }
+    li{
+      margin-bottom: $marginNormal;
+      h3{
+        font-size:22px;
+      }
+      h3, p{
+        color: $textColor;
+        text-decoration:none;
+        margin:0;
+      }
+      a:hover h3, a:hover p{
+        color: $mainColor;
+      }
+    }
+  }
+
 
  
 

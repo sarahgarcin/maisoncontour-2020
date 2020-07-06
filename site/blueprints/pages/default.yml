@@ -131,4 +131,23 @@ fields:
             label: Images 
             type: files
             query: page.images
+      projectsgallery:
+        name: Galerie de projets
+        label: Galerie de projets — {{title}}
+        preview:
+          snippet: blocks/projectsgallery
+        defaultView: preview 
+        fields:
+          title:
+            label: Titre à afficher
+            type: text
+          choosepage: 
+            label: Pages du site à afficher
+            type: structure
+            fields: 
+              link: 
+                label: Choisir la page
+                type: select
+                options: query
+                query: site.index
 

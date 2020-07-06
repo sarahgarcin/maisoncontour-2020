@@ -85,20 +85,47 @@ header{
 			border:none;
 		}
 	}
-	.menu_btn{
+	.menu_btns{
 		position: absolute;
 		right: 8%; 
 		top: 30px;
-		cursor: pointer;
-		text-transform: uppercase;
-		.menu-arrow{
-			display:inline-block;
-			position: relative;
-			top: -2px;
-		} 
-		&:hover{
-			font-style:italic; 
-			color: $mainColor;
+		.menu_btn{
+			cursor: pointer;
+			text-transform: uppercase;
+			.menu-arrow{
+				display:inline-block;
+				position: relative;
+				top: -2px;
+			} 
+			&:hover{
+				font-style:italic; 
+				color: $mainColor;
+			}
+		}
+		.languages{
+			text-align: right; 
+			li{
+				display: inline-block;
+				text-transform: uppercase;
+				font-size: $smallTextSize;
+				a{
+					color: $textColor;
+					&:hover{
+						color: $mainColor; 
+					}
+				} 
+				&.active a{
+						color: $mainColor; 
+						font-style: italic;
+				}
+				&::before{
+					content: "/";
+				} 
+				&:first-child:before{
+					content: "";
+				}
+			}
+
 		}
 	}
 	// .mobile-menu{

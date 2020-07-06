@@ -41,15 +41,13 @@ function init(){
 
 		//  -------------- Escales ---------------
 	// déplier escales
-	$('.list-projects article').on('click', function(){
-		
-		if($(this).hasClass('active')){
-			$(this).removeClass('active');
+	$('.list-project__details__inner').on('click', function(){
+		if($(this).parents('article').hasClass('active')){
+			$(this).parents('article').removeClass('active');
 		}
 		else{
 			$('.list-projects article').removeClass('active');
-			$(this).addClass('active');
-
+			$(this).parents('article').addClass('active');
 		}
 		
 		
@@ -78,7 +76,7 @@ function init(){
 			'top': yPos,
 			'left': xPos,
 			'display': 'block'
-		})
+		});
 	}, function(e){
 		$(this).find('.album-project-info').hide();
 	});
@@ -99,6 +97,54 @@ function init(){
 		
 
 	});
+
+
+	//  page 
+	// déplier les listes
+	$('.list article').on('click', function(){
+		$('.list article').find('.content-to-hide').removeClass('active');
+		if($(this).hasClass('active')){
+			$(this).removeClass('active');
+			$(this).find('.content-to-hide').removeClass('active');
+		}
+		else{
+			$('.list article').removeClass('active');
+			$(this).addClass('active');
+			$(this).find('.content-to-hide').addClass('active');
+		}
+	});
+
+	// déplier "en savoir plus"
+	$('.more-btn').on('click', function(){
+		$('.foldtext').find('.content-to-hide').removeClass('active');
+		if($(this).hasClass('active')){
+			$(this).removeClass('active');
+			$(this).next('.content-to-hide').removeClass('active');
+		}
+		else{
+			$('.foldtext .content-to-hide').removeClass('active');
+			$(this).addClass('active');
+			$(this).next('.content-to-hide').addClass('active');
+		}
+	});
+
+	// custom audio player
+	GreenAudioPlayer.init({
+    selector: '.audioplayer', // inits Green Audio Player on each audio container that has class "player"
+    stopOthersOnPlay: true,
+    enableKeystrokes: true
+	});
+	// });
+
+
+	// custom audio player
+	// document.addEventListener('DOMContentLoaded', function() {
+	//   new GreenAudioPlayer('.audioplayer',{
+	//     // selector: '.audioplayer',
+	//     stopOthersOnPlay: true,
+	//     enableKeystrokes: true
+	// 	});
+	// });
 
 }
 

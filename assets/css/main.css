@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -38,14 +39,9 @@ img {
 figure {
   margin: 0; }
 
-figcaption {
-  font-size: .8em;
-  color: #11214d; }
-  figcaption p {
-    margin: 0;
-    font-size: .8em;
-    color: #11214d;
-    display: inline-block; }
+figcaption, .audiocaption {
+  font-size: 17px;
+  font-style: italic; }
 
 p {
   font-size: 17px;
@@ -57,8 +53,7 @@ h1 {
   margin-top: 10px;
   margin-bottom: 20px;
   line-height: 1.2;
-  font-weight: normal;
-  font-style: italic; }
+  font-weight: normal; }
 
 h2 {
   margin: 0;
@@ -70,7 +65,13 @@ h2 {
 
 h3 {
   text-decoration: underline;
-  font-size: 17px; }
+  font-size: 17px;
+  font-style: italic;
+  font-weight: normal;
+  margin-bottom: 10px; }
+
+h3 + p {
+  margin-top: 0; }
 
 h4 {
   color: red;
@@ -151,19 +152,37 @@ header {
       min-width: 50px; }
     header .logo a {
       border: none; }
-  header .menu_btn {
+  header .menu_btns {
     position: absolute;
     right: 8%;
-    top: 30px;
-    cursor: pointer;
-    text-transform: uppercase; }
-    header .menu_btn .menu-arrow {
-      display: inline-block;
-      position: relative;
-      top: -2px; }
-    header .menu_btn:hover {
-      font-style: italic;
-      color: red; }
+    top: 30px; }
+    header .menu_btns .menu_btn {
+      cursor: pointer;
+      text-transform: uppercase; }
+      header .menu_btns .menu_btn .menu-arrow {
+        display: inline-block;
+        position: relative;
+        top: -2px; }
+      header .menu_btns .menu_btn:hover {
+        font-style: italic;
+        color: red; }
+    header .menu_btns .languages {
+      text-align: right; }
+      header .menu_btns .languages li {
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 14px; }
+        header .menu_btns .languages li a {
+          color: #212121; }
+          header .menu_btns .languages li a:hover {
+            color: red; }
+        header .menu_btns .languages li.active a {
+          color: red;
+          font-style: italic; }
+        header .menu_btns .languages li::before {
+          content: "/"; }
+        header .menu_btns .languages li:first-child:before {
+          content: ""; }
   header .nav {
     max-height: 0;
     overflow: hidden;
@@ -234,7 +253,7 @@ header {
   -ms-hyphens: auto;
   hyphens: auto;
   margin-top: 0;
-  max-height: 180px;
+  max-height: 160px;
   overflow: hidden;
   padding-bottom: 20px;
   -webkit-transition: all 0.5s ease;
@@ -242,6 +261,10 @@ header {
   transition: all 0.5s ease; }
   .list-projects-content article p, .list-projects-content article h2 {
     font-size: 14px; }
+  .list-projects-content article h2 {
+    margin-bottom: 0; }
+  .list-projects-content article h2 + p {
+    margin-top: 0; }
   .list-projects-content article:hover {
     cursor: pointer; }
     .list-projects-content article:hover .list-project__td--date {
@@ -255,9 +278,25 @@ header {
     .list-projects-content article.active .list-project__td--date {
       color: red;
       font-style: italic; }
+    .list-projects-content article.active .list-project__details__inner {
+      height: auto;
+      -webkit-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
+      .list-projects-content article.active .list-project__details__inner .chopper {
+        display: none; }
+      .list-projects-content article.active .list-project__details__inner .entire {
+        display: block; }
 
 .list-project__details__inner {
-  margin-left: 0; }
+  margin-left: 0;
+  height: 160px;
+  padding-bottom: 10px;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+  .list-project__details__inner .entire {
+    display: none; }
 
 .list-project__td h2 {
   font-size: 17px;
@@ -355,16 +394,36 @@ body[data-template='actualites'] .top-page, body[data-template='escales'] .top-p
   margin-right: 20px; }
 
 .image-same-height {
-  height: 150px;
+  height: 142px;
   text-align: left;
-  padding: 10px;
-  margin-left: 1rem; }
+  padding: 10px; }
   .image-same-height img {
     width: auto;
     max-height: 100%; }
 
+.audioplayer {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding-left: 0;
+  margin-bottom: 20px; }
+  .audioplayer .holder .play-pause-btn__icon {
+    fill: red; }
+  .audioplayer .slider .gap-progress .pin {
+    background-color: #646464; }
+  .audioplayer .slider .gap-progress {
+    background-color: red; }
+  .audioplayer .controls {
+    font-family: "Concorde BQ", serif;
+    color: #646464;
+    font-size: 14px; }
+  .audioplayer audio {
+    display: none; }
+  .audioplayer .volume {
+    display: none; }
+
 section {
-  margin-bottom: 80px; }
+  margin-bottom: 40px; }
 
 article {
   border-bottom: 0.01em solid #BDBDBD;
@@ -373,6 +432,25 @@ article {
   article:first-child {
     margin-top: 0; }
 
+.more-btn {
+  margin-top: 20px;
+  padding-bottom: 10px;
+  cursor: pointer; }
+  .more-btn:hover {
+    color: red;
+    font-style: italic; }
+  .more-btn.active {
+    color: red;
+    font-style: italic; }
+    .more-btn.active::after {
+      content: '↑'; }
+  .more-btn::after {
+    content: '↓';
+    color: red;
+    margin-left: 20px;
+    position: relative;
+    top: -2px; }
+
 .content-to-hide {
   max-height: 0;
   overflow: hidden;
@@ -380,13 +458,109 @@ article {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
   .content-to-hide.active {
-    max-height: 600px;
+    max-height: 800px;
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease; }
 
-.quote {
-  margin: 40px 0 40px 40px; }
+.pdf {
+  font-size: 14px;
+  display: block;
+  padding-left: 30px;
+  color: #212121; }
+  .pdf::before {
+    content: url("../images/picto-pdf.svg");
+    margin-left: -30px;
+    position: relative;
+    top: 8px;
+    margin-right: 10px; }
+  .pdf:hover {
+    color: red; }
+
+.quote, blockquote {
+  margin: 20px 0 40px 40px; }
+
+.list h2 {
+  margin-bottom: 40px; }
+
+.list article {
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  cursor: pointer; }
+  .list article:hover h3 {
+    color: red;
+    font-style: italic; }
+  .list article.active h3 {
+    color: red;
+    font-style: italic; }
+    .list article.active h3::after {
+      content: '↑'; }
+  .list article h3 {
+    text-decoration: none;
+    font-weight: normal;
+    font-style: normal;
+    margin: 0; }
+    .list article h3::after {
+      content: '↓';
+      color: red;
+      margin-left: 20px;
+      position: relative;
+      top: -2px; }
+  .list article .content-to-hide h3 {
+    color: #212121;
+    text-decoration: underline;
+    margin-bottom: 10px; }
+    .list article .content-to-hide h3::after {
+      content: ""; }
+  .list article .content-to-hide .list_title-info p {
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 0; }
+  .list article .content-to-hide .list_pdfs {
+    font-size: 14px; }
+    .list article .content-to-hide .list_pdfs li {
+      padding-left: 30px;
+      margin-left: 5px; }
+      .list article .content-to-hide .list_pdfs li::before {
+        content: url("../images/picto-pdf.svg");
+        margin-left: -30px;
+        position: relative;
+        top: 10px; }
+    .list article .content-to-hide .list_pdfs a {
+      color: #212121;
+      margin-left: 10px; }
+      .list article .content-to-hide .list_pdfs a:hover {
+        color: red; }
+
+.foldtext {
+  border-bottom: 0.01em solid #BDBDBD; }
+
+.bodytext ul li {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 10px; }
+
+.pagesgallery li a figcaption {
+  color: #212121; }
+
+.pagesgallery li a:hover figcaption {
+  color: red; }
+
+.projectsgallery ul {
+  margin: 0; }
+
+.projectsgallery li {
+  margin-bottom: 20px; }
+  .projectsgallery li h3 {
+    font-size: 22px; }
+  .projectsgallery li h3, .projectsgallery li p {
+    color: #212121;
+    text-decoration: none;
+    margin: 0; }
+  .projectsgallery li a:hover h3, .projectsgallery li a:hover p {
+    color: red; }
 
 @media only screen and (min-width: 48em) {
   .cover {

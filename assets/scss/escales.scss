@@ -44,9 +44,15 @@
 	article{
 		font-size: $smallTextSize;
 		p, h2{font-size: $smallTextSize;}
+		h2{
+			margin-bottom:0;
+		}
+		h2 + p {
+			margin-top:0;
+		}
 		hyphens: auto;
 		margin-top:0;
-		max-height: 180px;
+		max-height: 160px;
 		overflow: hidden;
 		padding-bottom: $marginNormal;
 		transition: all 0.5s ease;
@@ -64,6 +70,16 @@
 				color: $mainColor;
 				font-style: italic;
 			}
+			.list-project__details__inner{
+				height: auto;
+				transition: all 0.5s ease;
+				.chopper{
+					display:none;
+				}
+				.entire{
+					display:block;
+				}
+			}
 		}
 	}
 
@@ -71,6 +87,12 @@
 
 .list-project__details__inner{
 	margin-left:0;
+	height: 160px;
+	padding-bottom: $marginSmall;
+	transition: all 0.5s ease;
+	.entire{
+		display:none;
+	}
 } 
 
 .list-project__td{

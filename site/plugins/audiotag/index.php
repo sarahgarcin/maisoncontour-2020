@@ -11,10 +11,13 @@ Kirby::plugin('sarahgarcin/audiotag', [
                 'caption'
             ],
             'html' => function ($tag) {
-                return '<figure class="'.$tag->class.'">
-                <figcaption>'. $tag->caption.'</figcaption>
-                    <audio controls src="'.$tag->file($tag->value).'"></audio>
-                </figure>';
+                return '<div class="audio">
+                    <div class="audiocaption">'. $tag->caption.'</figcaption>   
+                    <div class="audioplayer '.$tag->class.'">
+                        <audio controls src="'.$tag->file($tag->value).'"></audio>
+                    </div>
+                </div>'
+                ;
             }
         ]
     ]
