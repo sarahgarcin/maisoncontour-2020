@@ -322,18 +322,41 @@ header {
     margin-left: -1rem; } }
 
 .sidebar .tags {
+  position: fixed;
+  z-index: 200;
+  width: inherit;
+  max-width: inherit;
   margin-top: 40px;
-  padding-left: 20px; }
+  padding-left: 10px; }
   .sidebar .tags li {
+    width: 80%;
     font-size: 14px;
     border-bottom: 0.01em solid #BDBDBD;
     padding-top: 5px;
     padding-bottom: 5px;
-    text-transform: capitalize;
-    cursor: pointer; }
+    cursor: pointer;
+    position: relative; }
     .sidebar .tags li:hover, .sidebar .tags li.active {
       color: red;
       border-bottom: 1px solid red; }
+    .sidebar .tags li:hover:after {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      position: absolute;
+      left: 50%;
+      background: #e1e8ef;
+      border-radius: 5px;
+      color: #212121;
+      content: attr(data-title);
+      font-size: 12px;
+      font-style: italic;
+      padding: 13px;
+      width: 220px;
+      z-index: 20; }
 
 .list-projects-content {
   margin-left: 0; }
@@ -344,17 +367,25 @@ header {
   opacity: 1;
   -webkit-transition: opacity 0.2s ease;
   -o-transition: opacity 0.2s ease;
-  transition: opacity 0.2s ease; }
+  transition: opacity 0.2s ease;
+  position: relative; }
   .album-project.hide {
     opacity: 0; }
+  .album-project:hover .album-project-info {
+    opacity: 1; }
   .album-project .album-project-info {
     position: absolute;
     background: #FFF;
     border-top: 0.01em solid #BDBDBD;
     border-bottom: 0.01em solid #BDBDBD;
-    padding: 20px;
-    display: none;
-    z-index: 99; }
+    padding: 5px 20px;
+    width: 280px;
+    opacity: 0;
+    z-index: 99;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    color: #000; }
     .album-project .album-project-info h3, .album-project .album-project-info p {
       font-size: 14px;
       font-weight: normal;
@@ -385,6 +416,9 @@ main {
   margin: auto;
   font-size: 17px;
   margin-bottom: 200px; }
+
+.rouge {
+  color: red; }
 
 .sentence-gray-italic {
   color: #646464;
@@ -484,9 +518,10 @@ article {
   margin-top: 40px;
   position: fixed;
   width: inherit;
-  max-width: inherit; }
+  max-width: inherit;
+  padding-left: 10px; }
   .table-of-contents li {
-    width: 85%;
+    width: 80%;
     font-size: 12px;
     padding-top: 5px;
     padding-bottom: 5px;

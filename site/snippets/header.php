@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?php echo $kirby->language() ?? 'en' ?>">
+<html lang="<?php echo $kirby->language() ?? 'fr' ?>">
 <head>
 
   <meta charset="utf-8" />

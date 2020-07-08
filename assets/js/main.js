@@ -69,16 +69,16 @@ function init(){
 	// 	$(this).parents('.album-project').find('.album-project-info').hide();
 	// })
 
-	$('.album-project').hover(function(e){
-		var xPos = e.pageX;
-		var yPos= e.pageY;
+	$('.album-project').hover(function(event){
+		var left = event.pageX - $(this).offset().left;
+     var top = event.pageY - $(this).offset().top;
 		$(this).find('.album-project-info').css({
-			'top': yPos,
-			'left': xPos,
-			'display': 'block'
+			'top': top,
+			'left': left,
+			// 'display': 'block'
 		});
-	}, function(e){
-		$(this).find('.album-project-info').hide();
+	// }, function(e){
+	// 	$(this).find('.album-project-info').hide();
 	});
 
 	// système d'affichage / effacement avec les tags

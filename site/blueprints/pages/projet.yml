@@ -7,11 +7,17 @@ fields:
     label: Image de couverture
     type: files
     width: 1/2
+  # category:
+  #   label: Categorie(s)
+  #   type: checkboxes
+  #   options: query
+  #   query: page.parent.tags.split
+  #   width: 1/2
   category:
     label: Categorie(s)
     type: checkboxes
     options: query
-    query: page.parent.tags.split
+    query: page.parent.tags.toStructure
     width: 1/2
   text:
     label: Descriptif

@@ -7,8 +7,8 @@
 	<main class='row'>
 		<div class="sidebar col-xs-12 col-md-2">
 			<ul class="tags">
-				<?php foreach($projects->tags()->split() as $tag):?>
-					<li data-tag="<?= Str::slug($tag)?>"><?= $tag ?></li>
+				<?php foreach($projects->tags()->toStructure() as $tag):?>
+					<li data-tag="<?= Str::slug($tag->title())?>" data-title="<?= $tag->text() ?>"><?= $tag->title() ?></li>
 				<?php endforeach?>
 			</ul>
 		</div>
@@ -27,6 +27,7 @@
 			    	<?php else:?>
 				    	<div class="album-project <?php e($randomSize==1, 'col-md-2')?><?php e($randomSize==2, 'col-md-3')?><?php e($randomSize==3, 'col-md-4')?><?php foreach ($project->category()->split() as $category): echo ' '. Str::slug($category);endforeach ?>">
 				    <?php endif;?>
+				    		<a href="<?= $project->url() ?>" title="<?= $project->title() ?>">
 					    		<figure>
 					    			<?= $image->thumb([
 								      'width'   => 500,
@@ -39,6 +40,7 @@
 					    			<h2><?= $project->title()?></h2>
 					    			<p><?= $project->place()?></p>
 					    		</div>
+					    	</a>
 				    	</div>
 				    	<?php if($randomBlank != 1):?>
 				    		<div class="album-empty <?php e($randomSize==1, 'col-md-2')?><?php e($randomSize==2, 'col-md-3')?><?php e($randomSize==3, 'col-md-4')?>">

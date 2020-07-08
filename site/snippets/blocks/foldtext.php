@@ -5,7 +5,7 @@
 	<?php endif;?>
 	<?= $data->summary()->kt() ?>
 	<div class="more-btn">
-		En savoir plus
+		La suite
 	</div>
 	<div class="content-to-hide">
 		<?= $data->text()->kt() ?>
