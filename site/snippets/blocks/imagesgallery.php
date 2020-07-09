@@ -4,7 +4,7 @@
 	<?php endif;?>
 	<ul class="row">
 	<?php foreach($data->selectimages()->toFiles() as $image):?>
-		<li>
+		<li class="col-xs-6 col-sm-5 col-md-4">
 			<figure class="image-same-height">
 			<?= $image->thumb([
 		      'width'   => 300,

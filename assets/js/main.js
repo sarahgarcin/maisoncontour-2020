@@ -49,8 +49,6 @@ function init(){
 			$('.list-projects article').removeClass('active');
 			$(this).parents('article').addClass('active');
 		}
-		
-		
 	});
 
 
@@ -92,11 +90,32 @@ function init(){
 		}
 		else{
 			$(this).removeClass('active');
-		}
-
-		
-
+		}	
 	});
+
+	// projet
+	 $('.slider-for').slick({
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		  arrows: true,
+		  fade: false,
+		  infinite: true,
+		  //adaptiveHeight: true,
+		  // variableWidth: true,
+		  asNavFor: '.slider-nav'
+		});
+
+		$('.slider-nav').slick({
+		  // slidesToShow: 3,
+		  // slidesToScroll: 1,
+		  asNavFor: '.slider-for',
+		  dots: true,
+		  arrows: false,
+		  centerMode: true,
+		  focusOnSelect: true, 
+  		variableWidth: true
+		});
+
 
 
 	//  page 
@@ -140,8 +159,8 @@ function init(){
 	$('body[data-template="default"] h2').each(function(){
 		var title = $(this).html();
 		var anchor = $(this).attr('id');
-		var htmlToAdd = '<li><a href="#'+anchor+'">'+title+'</a></li>'
-		$('.sidebar .table-of-contents ul').append(htmlToAdd)
+		var htmlToAdd = '<li><a href="#'+anchor+'">'+title+'</a></li>';
+		$('.sidebar .table-of-contents ul').append(htmlToAdd);
 	});
 
 }

@@ -86,3 +86,74 @@
 	}
 
 }
+
+// -------- page projet -----------
+// texte
+.projet-infos{
+	@include grayBorder;
+	@include grayBorderTop;
+	padding-top: $marginSmall;
+	padding-bottom: $marginNormal;
+	.projet-infos-inner{
+		h1{
+			font-size: $h2Size;
+			margin:0; 
+			font-style: italic;
+		}
+		p.date, p.place{
+			margin:5px 0;
+		}
+	}
+}
+
+// slick
+.slick-prev::before, .slick-next::before{
+	color: $textColor;
+}
+
+.slider-for{
+	position: relative;
+}
+
+.slider-for .portrait {
+	// position:relative
+	img{
+		width: 50%;
+		margin:auto;
+	}
+}
+
+.slider-for .landscape{
+	position:relative;
+	// height: inherit;
+	// min-height: inherit;
+	// img{
+	// 	position: absolute;
+	// 	top: 170px;
+	// 	transform: translateY(-50%);
+	// }
+}
+
+// .slider-for .portrait{
+// 	width: 200px; 
+// 	margin:auto;
+// }
+
+// .slider-for .landscape{
+// 	width: 500px;
+// 	max-width: 100%;
+// }
+
+.slider-nav{
+	display: flex;
+	justify-content: space-between;
+	.image-same-height{
+		height: 100px;
+	}
+	figure{
+		// width: auto !important;
+	}
+}
+
+
+

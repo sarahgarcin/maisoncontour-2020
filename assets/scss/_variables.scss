@@ -26,6 +26,10 @@ $smallTextSize: 14px;
 	border-bottom: 0.01em solid #BDBDBD;
 }
 
+@mixin grayBorderTop{
+	border-top: 0.01em solid #BDBDBD;
+}
+
 @mixin center{
 	display: block;
 	position: relative; 

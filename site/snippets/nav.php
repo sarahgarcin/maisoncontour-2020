@@ -54,14 +54,6 @@
 			<div class="old-site">
 				<?= $site->old()->kt()?>
 			</div>
-			
-			<!-- <?php foreach($pages->listed() as $p): ?>
-				<li class="<?= $p->group() ?><?= r($p->isOpen(), ' active') ?>">
-	        	<a href="<?= $p->url()?>" title="<?= $p->title()?>">
-	        		<?= $p->title() ?>
-	        	</a>
-	      </li>
-			<?php endforeach; ?> -->
 		</ul>
 
 	</nav>

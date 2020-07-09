@@ -22,7 +22,7 @@
   ul, ol{margin:0; padding:0;}
   li{list-style:none;}
   a{color: $mainColor;text-decoration: none;}
-  a:visited{color: $mainColor;}
+  a:visited{color: $textColor;}
   a:hover{color: $mainColor; font-style: italic;}
   img {width: 100%;vertical-align: top;}
   figure{margin:0;}
@@ -103,8 +103,6 @@
 
   // -------------- IMPORT TEMPlATES STYLES --------------
   @import "header.scss";
-  @import "home.scss";
-  @import "article.scss";
   @import "escales.scss";
   @import "album.scss";
   @import "actu.scss";
@@ -132,11 +130,6 @@
     color: $mainColor;
   }
 
-  .sentence-gray-italic{
-    color: $secondColor;
-    font-style: italic; 
-    font-size: $textSize;
-  }
 
   .top-page{
     border-bottom: 1px solid $mainColor;
@@ -146,7 +139,7 @@
     }
   }
 
-  body[data-template='actualites'] .top-page, body[data-template='escales'] .top-page, body[data-template='album'] .top-page{
+  body[data-template='actualites'] .top-page, body[data-template='escales'] .top-page, body[data-template='album'] .top-page, body[data-template='projet'] .top-page{
     text-transform:uppercase;
   }
 
@@ -164,7 +157,7 @@
   }
 
   .image-same-height{
-    height: 142px;
+    height: 90px;
     text-align: left;
     padding: $marginSmall;
     // margin-left: 0.5rem;
@@ -248,9 +241,39 @@
     overflow: hidden;
     transition: all 0.5s ease;
     &.active{
-      max-height: 800px;
+      max-height: 2000px;
       transition: all 0.5s ease;
 
+    }
+  }
+
+  .go-back-arrow{
+    margin-top: $marginBig;
+    width:inherit;
+    max-width: inherit;
+    position: fixed;
+    text-align: center; 
+    a{
+      color: $textColor; 
+      // font-size: 40px;
+      &:hover{
+        color:$mainColor;
+      }
+    }
+
+  }
+
+  .sentence-gray-italic{
+    margin-top: $marginBig;
+    position:fixed;
+    width: inherit;
+    max-width: inherit;
+    color: $secondColor;
+    font-style: italic; 
+    padding-left: $marginSmall;
+    p{
+      font-size: $smallTextSize;
+       width: 80%;
     }
   }
 
@@ -455,6 +478,7 @@
       position: relative;
       width:100%;
       max-width:16.667%;
+      // border: 1px solid gray;
     }
 
 
@@ -464,6 +488,11 @@
     .hide-for-small-only{
         display:block !important;
     }
+
+    .image-same-height{
+      height: 142px;
+    }
+
   }
 
 

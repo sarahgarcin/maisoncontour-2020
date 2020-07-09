@@ -52,23 +52,23 @@
 		    <?php foreach ($projects->children()->listed() as $project): ?>
 		    	<article>
 			    	<div class="list-project__details__inner row">
-							<p class="list-project__td list-project__td--date col-md-1">
+							<p class="list-project__td list-project__td--date col-xs-12 col-md-1">
 								<?= $project->time()->toDate('d.m.Y') ?>
 							</p>
-							<div class="list-project__td list-project__td--topography col-md-2">
+							<div class="list-project__td list-project__td--topography col-xs-12 col-md-2">
 								<?= $project->topography()->chopper(22, 'words', '…') ?>	
 							</div>
-							<p class="list-project__td list-project__td--place col-md-2">
+							<p class="list-project__td list-project__td--place col-xs-12 col-md-2">
 									<?= $project->place() ?>
 							</p>
-							<div class="list-project__td list-project__td--title col-md-2">
+							<div class="list-project__td list-project__td--title col-xs-12 col-md-2">
 								<h2><?= $project->title() ?></h2>
 								<?= $project->text()->kt() ?>
 							</div>
-							<div class="list-project__td list-project__td--distribution col-md-2">
+							<div class="list-project__td list-project__td--distribution col-xs-12 col-md-2">
 								<?= $project->distribution()->chopper(18, 'words', '…')?>
 							</div>
-							<div class="list-project__td list-project__td--partenaires col-md-3">
+							<div class="list-project__td list-project__td--partenaires col-xs-12 col-md-3">
 								<div class="chopper"><?= $project->partenaires()->chopper(20, 'words', '…') ?></div>
 								<div class="entire">
 									<?= $project->partenaires()->kt() ?>

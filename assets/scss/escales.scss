@@ -4,38 +4,10 @@
 	font-size: $smallTextSize;
 }
 
-// taille des colonnes
-.list-projects__td--date, .list-project__td--date{
-	max-width: 10%;
-	flex-basis: 10%;
-}
-
-.list-projects__td--topography, .list-project__td--topography{
-	max-width: 20%;
-	flex-basis: 20%;
-}
-
-.list-projects__td--place, .list-project__td--place{
-	max-width: 15%;
-	flex-basis: 15%;
-}
-
-.list-projects__td--title, .list-project__td--title{
-	max-width: 18%;
-	flex-basis: 18%;
-}
-
-.list-projects__td--distribution, .list-project__td--distribution{
-	max-width: 18.5%;
-	flex-basis: 18.5%;
-}
-
-.list-projects__td--partenaires, .list-project__td--partenaires{
-	max-width: 18.5%;
-	flex-basis: 18.5%;
-}
-
 .list-projects-content{
+	p, h2{
+		margin:5px 0px;
+	}
 	.list-project__td--distribution, .list-project__td--partenaires{
 		p{
 			font-size: 12px;
@@ -52,7 +24,7 @@
 		}
 		hyphens: auto;
 		margin-top:0;
-		max-height: 160px;
+		max-height: 55vw;
 		overflow: hidden;
 		padding-bottom: $marginNormal;
 		transition: all 0.5s ease;
@@ -87,7 +59,7 @@
 
 .list-project__details__inner{
 	margin-left:0;
-	height: 160px;
+	height: 55vw;
 	padding-bottom: $marginSmall;
 	transition: all 0.5s ease;
 	.entire{
@@ -96,10 +68,9 @@
 } 
 
 .list-project__td{
-	// padding-right:0;
+	padding-left:0;
 	h2{
 		font-size: $textSize;
-		margin-top: $marginNormal;
 	}
 }
 
@@ -108,5 +79,55 @@
 	.list-project__details__inner{
 		margin-left:-1rem;
 	} 
+	// taille des colonnes
+	.list-projects__td--date, .list-project__td--date{
+		max-width: 10%;
+		flex-basis: 10%;
+	}
+
+	.list-projects__td--topography, .list-project__td--topography{
+		max-width: 20%;
+		flex-basis: 20%;
+	}
+
+	.list-projects__td--place, .list-project__td--place{
+		max-width: 15%;
+		flex-basis: 15%;
+	}
+
+	.list-projects__td--title, .list-project__td--title{
+		max-width: 18%;
+		flex-basis: 18%;
+	}
+
+	.list-projects__td--distribution, .list-project__td--distribution{
+		max-width: 18.5%;
+		flex-basis: 18.5%;
+	}
+
+	.list-projects__td--partenaires, .list-project__td--partenaires{
+		max-width: 18.5%;
+		flex-basis: 18.5%;
+	}
+
+	.list-projects-content{
+		p, h2{
+			margin:$marginNormal 0px;
+		}
+		article{
+			max-height: 160px;
+		}
+	}
+
+	.list-project__details__inner{
+		height: 160px;
+	}
+
+	.list-project__td{
+		padding-left:1rem;
+		h2{
+			margin-top: $marginNormal;
+		}
+	}
 
 }

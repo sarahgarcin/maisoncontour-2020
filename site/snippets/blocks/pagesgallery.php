@@ -5,7 +5,7 @@
 	<?php endif;?>
 	<ul class="row">
 	<?php foreach($data->choosepage()->toStructure() as $el):?>
-		<li class="col-xs-6 col-md-4">
+		<li class="col-xs-6 col-sm-4 col-md-4">
 			<?php $elPage = $site->index()->findByURI($el->link())?>
 			<a href="<?= $el->link()?>" title="<?= $elPage->title()?>">
 				<figure>
