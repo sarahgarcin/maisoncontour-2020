@@ -91,6 +91,10 @@ fields:
                   text:
                     label: Texte
                     type: textarea
+                  gallery: 
+                    label: Galerie d'images
+                    type: files
+                    query: page.images
                   pdfs: 
                     label: Documents PDFS
                     type: structure

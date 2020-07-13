@@ -18,7 +18,7 @@
 				</figure>
 				<div class="col-xs-7 projectsgallery_info">
 					<a href="<?= $el->link()?>" title="<?= $elPage->title()?>">
-						<p><?= $elPage->time()->toDate('d.m.Y')?></p>
+						<p><?= $elPage->time()?></p>
 						<h3><?= $elPage->title() ?></h3>
 						<p><?= $elPage->place() ?></p>
 					</a>

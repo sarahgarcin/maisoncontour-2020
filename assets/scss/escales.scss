@@ -28,6 +28,9 @@
 		overflow: hidden;
 		padding-bottom: $marginNormal;
 		transition: all 0.5s ease;
+		.list-project__td--title p{
+			margin:0;
+		}
 		&:hover{
 			cursor: pointer;
 			.list-project__td--date {
@@ -36,7 +39,7 @@
 			}
 		}
 		&.active{
-			max-height: 800px;
+			max-height: 2000px;
 			transition: all 0.5s ease;
 			.list-project__td--date {
 				color: $mainColor;

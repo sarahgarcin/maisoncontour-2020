@@ -258,13 +258,15 @@ header {
     margin-bottom: 0; }
   .list-projects-content article h2 + p {
     margin-top: 0; }
+  .list-projects-content article .list-project__td--title p {
+    margin: 0; }
   .list-projects-content article:hover {
     cursor: pointer; }
     .list-projects-content article:hover .list-project__td--date {
       color: red;
       font-style: italic; }
   .list-projects-content article.active {
-    max-height: 800px;
+    max-height: 2000px;
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease; }
@@ -421,6 +423,11 @@ header {
     font-style: italic; }
   .projet-infos .projet-infos-inner p.date, .projet-infos .projet-infos-inner p.place {
     margin: 5px 0; }
+  .projet-infos .projet-infos-inner ul {
+    padding-left: 20px; }
+    .projet-infos .projet-infos-inner ul li {
+      list-style: disc;
+      margin-bottom: 10px; }
 
 .slick-prev::before, .slick-next::before {
   color: #212121; }
@@ -621,8 +628,7 @@ article {
   padding: 0;
   margin: 0;
   margin-top: 20px;
-  padding-bottom: 20px;
-  cursor: pointer; }
+  padding-bottom: 20px; }
   .list article:hover h3 {
     color: red;
     font-style: italic; }
@@ -635,7 +641,8 @@ article {
     text-decoration: none;
     font-weight: normal;
     font-style: normal;
-    margin: 0; }
+    margin: 0;
+    cursor: pointer; }
     .list article h3::after {
       content: '↓';
       color: red;

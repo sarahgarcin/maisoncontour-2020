@@ -120,16 +120,17 @@ function init(){
 
 	//  page 
 	// déplier les listes
-	$('.list article').on('click', function(){
+	$('.list article h3').on('click', function(){
 		$('.list article').find('.content-to-hide').removeClass('active');
-		if($(this).hasClass('active')){
-			$(this).removeClass('active');
-			$(this).find('.content-to-hide').removeClass('active');
+		$parent = $(this).parent('article');
+		if($parent.hasClass('active')){
+			$parent.removeClass('active');
+			$parent.find('.content-to-hide').removeClass('active');
 		}
 		else{
 			$('.list article').removeClass('active');
-			$(this).addClass('active');
-			$(this).find('.content-to-hide').addClass('active');
+			$parent.addClass('active');
+			$parent.find('.content-to-hide').addClass('active');
 		}
 	});
 

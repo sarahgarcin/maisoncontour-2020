@@ -26,4 +26,5 @@
 		
 	</main>
 
+<?= snippet('photoswipe'); ?>
 <?php snippet('footer') ?>

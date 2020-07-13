@@ -2,18 +2,20 @@
 	<?php if($data->title()->isNotEmpty()):?>
 		<h2 id="<?= Str::slug($data->title())?>"><?= $data->title() ?></h2>
 	<?php endif;?>
-	<ul class="row">
-	<?php foreach($data->selectimages()->toFiles() as $image):?>
-		<li class="col-xs-6 col-sm-5 col-md-4">
-			<figure class="image-same-height">
-			<?= $image->thumb([
-		      'width'   => 300,
-		      'height'  => 200,
-		      'quality' => 80,
-		    ])->html();?>
-		    <figcaption><?= $image->caption()->kt()?></figcaption>
+	<div class="photoswipe project__image" itemscope itemtype="http://schema.org/ImageGallery">
+		<div class="row">
+		<?php foreach($data->selectimages()->toFiles() as $image):?>
+			<figure class="image-same-height" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				<a href="<?= $image->url(); ?>" itemprop="contentUrl" data-size="<?= $image->width(); ?>x<?= $image->height(); ?>" title="<?= $image->text()->value(); ?>">
+          <img src="<?= $image->url(); ?>" itemprop="thumbnail"
+               alt="<?= $page->title()->value() ?> <?= $image->text()->value(); ?>"
+               class="img-responsive"/>
+				</a>
+        <?php if($image->caption()->isNotEmpty()):?>
+					<figcaption itemprop="caption description"><?= $image->caption()->kt()?></figcaption>
+				<?php endif; ?>
 		 	</figure>
-		</li>
-	<?php endforeach;?>
-	</ul>
+		<?php endforeach;?>
+		</ul>
+	</div>
 </section>

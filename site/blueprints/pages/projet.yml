@@ -1,4 +1,4 @@
-title: Projet
+title: Création
 preset: page
 pages: false
 
@@ -19,13 +19,30 @@ fields:
     options: query
     query: page.parent.tags.toStructure
     width: 1/2
+  displayEscales: 
+    label: Afficher cette création dans Escale 
+    type: radio
+    default: yes
+    options: 
+      yes: Oui
+      no: Non
+    width: 1/2
+  displayAlbum: 
+    label: Afficher cette création dans Album 
+    type: radio
+    default: yes
+    options: 
+      yes: Oui
+      no: Non
+    width: 1/2
   text:
     label: Descriptif
     type: textarea
     size: small
   time: 
     label: Date
-    type: date
+    type: text
+    # type: date
   topography: 
     label: Topographie
     type: textarea

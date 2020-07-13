@@ -37,7 +37,7 @@
 				</div>
 				<div class="list-projects-content">
 				<?php 
-					$projects = $site->index()->find('projets');
+					$projects = $site->index()->find('creations');
 					
 					// sort by category
 					// $projects = $projects->children()->listed()->sortBy(function ($page) {
@@ -50,54 +50,65 @@
 					// }
 				?>
 		    <?php foreach ($projects->children()->listed() as $project): ?>
-		    	<article>
-			    	<div class="list-project__details__inner row">
-							<p class="list-project__td list-project__td--date col-xs-12 col-md-1">
-								<?= $project->time()->toDate('d.m.Y') ?>
-							</p>
-							<div class="list-project__td list-project__td--topography col-xs-12 col-md-2">
-								<?= $project->topography()->chopper(22, 'words', '…') ?>	
-							</div>
-							<p class="list-project__td list-project__td--place col-xs-12 col-md-2">
-									<?= $project->place() ?>
-							</p>
-							<div class="list-project__td list-project__td--title col-xs-12 col-md-2">
-								<h2><?= $project->title() ?></h2>
-								<?= $project->text()->kt() ?>
-							</div>
-							<div class="list-project__td list-project__td--distribution col-xs-12 col-md-2">
-								<?= $project->distribution()->chopper(18, 'words', '…')?>
-							</div>
-							<div class="list-project__td list-project__td--partenaires col-xs-12 col-md-3">
-								<div class="chopper"><?= $project->partenaires()->chopper(20, 'words', '…') ?></div>
-								<div class="entire">
-									<?= $project->partenaires()->kt() ?>
-								</div>
-							</div>							
-						</div>
-						<?php if($project->hasImages()):?>
-							<div class="list-project__content fold">
-								<div class="photoswipe project__image" itemscope itemtype="http://schema.org/ImageGallery">
-									<div class="row">
-									  <?php foreach ($project->images() as $image): ?>
-									    <figure class="image-same-height" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-									        <a href="<?= $image->url(); ?>" itemprop="contentUrl" data-size="<?= $image->width(); ?>x<?= $image->height(); ?>"
-									           title="<?= $image->text()->value(); ?>">
-									            <img src="<?= $image->url(); ?>" itemprop="thumbnail"
-									                 alt="<?= $page->title()->value() ?> <?= $image->text()->value(); ?>"
-									                 class="img-responsive"/>
-									        </a>
-									        <?php if($image->caption()->isNotEmpty()):?>
-														<figcaption itemprop="caption description"><?= $image->caption()->kt()?></figcaption>
-													<?php endif; ?>
-									    </figure>
-									  <?php endforeach; ?>
+		    	<?php if($project->displayEscales() != "no"):?>
+			    	<article>
+				    	<div class="list-project__details__inner row">
+								<p class="list-project__td list-project__td--date col-xs-12 col-md-1">
+									<?= $project->time()?>
+								</p>
+								<div class="list-project__td list-project__td--topography col-xs-12 col-md-2">
+									<div class="chopper">
+										<p><?= $project->topography()->chopper(19, 'words', '…') ?>	</p>
+									</div>
+									<div class="entire">
+										<p><?= $project->topography()?></p>
 									</div>
 								</div>
+								<p class="list-project__td list-project__td--place col-xs-12 col-md-2">
+										<?= $project->place() ?>
+								</p>
+								<div class="list-project__td list-project__td--title col-xs-12 col-md-2">
+									<h2><?= $project->title() ?></h2>
+									<div class="chopper">
+										<?= $project->text()->kt()->chopper(10, 'words', '…') ?>
+									</div>
+									<div class="entire">
+										<?= $project->text()->kt() ?>
+									</div>
+								</div>
+								<div class="list-project__td list-project__td--distribution col-xs-12 col-md-2">
+									<?= $project->distribution()->chopper(18, 'words', '…')?>
+								</div>
+								<div class="list-project__td list-project__td--partenaires col-xs-12 col-md-3">
+									<div class="chopper"><?= $project->partenaires()->chopper(20, 'words', '…') ?></div>
+									<div class="entire">
+										<?= $project->partenaires()->kt() ?>
+									</div>
+								</div>							
 							</div>
-						<?php endif;?>
-			    </article>
-			    
+							<?php if($project->hasImages()):?>
+								<div class="list-project__content fold">
+									<div class="photoswipe project__image" itemscope itemtype="http://schema.org/ImageGallery">
+										<div class="row">
+										  <?php foreach ($project->images() as $image): ?>
+										    <figure class="image-same-height" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+										        <a href="<?= $image->url(); ?>" itemprop="contentUrl" data-size="<?= $image->width(); ?>x<?= $image->height(); ?>"
+										           title="<?= $image->text()->value(); ?>">
+										            <img src="<?= $image->url(); ?>" itemprop="thumbnail"
+										                 alt="<?= $page->title()->value() ?> <?= $image->text()->value(); ?>"
+										                 class="img-responsive"/>
+										        </a>
+										        <?php if($image->caption()->isNotEmpty()):?>
+															<figcaption itemprop="caption description"><?= $image->caption()->kt()?></figcaption>
+														<?php endif; ?>
+										    </figure>
+										  <?php endforeach; ?>
+										</div>
+									</div>
+								</div>
+							<?php endif;?>
+				    </article>
+			    <?php endif;?>
 		    <?php endforeach ?>
 	    </div>
 				

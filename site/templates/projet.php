@@ -37,9 +37,10 @@
 			</div>
 			<div class="projet-infos col-xs-12 col-sm-5">
 				<div class="projet-infos-inner">
-					<p class="date"><?= $page->time()->toDate('d.m.Y')?></p>
+					<p class="date"><?= $page->time()?></p>
 					<h1><?= $page->title()?></h1>
 					<p class="place"><?= $page->place()?></p>
+					<p class="topography"><?= $page->text()->kt()?></p>
 					<p class="topography"><?= $page->topography()->kt()?></p>
 					<p class="distribution"><?= $page->distribution()->kt()?></p>
 					<p class="partenaires"><?= $page->partenaires()->kt()?></p>

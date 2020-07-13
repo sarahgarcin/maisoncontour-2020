@@ -13,6 +13,22 @@
 		  		<div class="list_text">
 		  			<?=$el->text()->kt()?>
 		  		</div>
+		  		<div class="photoswipe project__image" itemscope itemtype="http://schema.org/ImageGallery">
+						<div class="row">
+						<?php foreach($el->gallery()->toFiles() as $image):?>
+							<figure class="image-same-height" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+								<a href="<?= $image->url(); ?>" itemprop="contentUrl" data-size="<?= $image->width(); ?>x<?= $image->height(); ?>" title="<?= $image->text()->value(); ?>">
+				          <img src="<?= $image->url(); ?>" itemprop="thumbnail"
+				               alt="<?= $page->title()->value() ?> <?= $image->text()->value(); ?>"
+				               class="img-responsive"/>
+								</a>
+				        <?php if($image->caption()->isNotEmpty()):?>
+									<figcaption itemprop="caption description"><?= $image->caption()->kt()?></figcaption>
+								<?php endif; ?>
+						 	</figure>
+						<?php endforeach;?>
+						</ul>
+					</div>
 		  		<div class="list_pdfs">
 		  			<ul>
 		  			<?php foreach($el->pdfs()->toStructure() as $pdf):?>

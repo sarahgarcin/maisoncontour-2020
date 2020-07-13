@@ -103,6 +103,13 @@
 		p.date, p.place{
 			margin:5px 0;
 		}
+		ul{
+			padding-left: $marginNormal;
+			li{
+				list-style: disc;
+				margin-bottom: $marginSmall;
+			}
+		}
 	}
 }
 
