@@ -3,10 +3,9 @@
 	
 <main class='row'>
 	<div class="sidebar col-xs-12 col-sm-2">
-		<div class="go-back-arrow">
+		<div class="go-back-arrow hide-for-small-only">
 			<a href="javascript:history.back()">← Retour</a>
 		</div>
-		
 	</div>
 	<div class="content col-xs-12 col-sm-10">
 		<div class="top-page">
@@ -14,9 +13,12 @@
 				<a href="<?=$site->index()->find('album')->url()?>" title="<?=$site->index()->find('album')->title()?>">
 					<?=$site->index()->find('album')->title()?>
 				</a>
-		</h1>
+			</h1>
 		</div>
 		<div class="content-inner col-xs-12 row">
+			<div class="go-back-arrow show-for-small-only">
+				<a href="javascript:history.back()">← Retour</a>
+			</div>
 			<div class="projet-images col-xs-12 col-sm-7">
 				<div class="slider-for">		
 					<?php foreach($page->images() as $image):?>

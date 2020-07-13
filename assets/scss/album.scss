@@ -1,41 +1,50 @@
-.sidebar{
-	.tags{
-		position: fixed; 
-		z-index: 200; 
-		width: inherit;
-		max-width: inherit;
-		margin-top: $marginBig;
-		padding-left: $marginSmall;
-		li{
-			width: 80%;
-			font-size:$smallTextSize;
-			@include grayBorder;
-			padding-top: $marginSmall/2;
-			padding-bottom: $marginSmall/2;
-			cursor: pointer; 
-			&:hover, &.active{
-				color: $mainColor; 
-				border-bottom: 1px solid $mainColor;
-			}
-			position: relative;
-			&:hover:after{
-			  display: flex;
-			  justify-content: center;
-			  position: absolute;
-			  left: 50%;
-			  background: rgb(225, 232, 239);
-			  border-radius: 5px;
-			  color: $textColor;
-			  content: attr(data-title);
-			  font-size: 12px;
-			  font-style: italic;
-			  padding: 13px;
-			  width: 220px;
-			  z-index: 20;
-			}
+
+.tags{
+	// position: fixed; 
+	// margin-top: $marginBig;
+	// padding-left: $marginSmall;
+	
+	z-index: 200; 
+	width: inherit;
+	max-width: inherit;
+	margin-bottom: $marginBig;
+
+
+	li{
+		// display: block;
+		// width: 80%;
+		// margin-right: 0;
+		margin-right: $marginSmall;
+		display:inline-block;
+		width: auto;
+		font-size:$smallTextSize;
+		@include grayBorder;
+		padding-top: $marginSmall/2;
+		padding-bottom: $marginSmall/2;
+		cursor: pointer; 
+		&:hover, &.active{
+			color: $mainColor; 
+			border-bottom: 1px solid $mainColor;
+		}
+		position: relative;
+		&:hover:after{
+		  display: flex;
+		  justify-content: center;
+		  position: absolute;
+		  left: 50%;
+		  background: rgb(225, 232, 239);
+		  border-radius: 5px;
+		  color: $textColor;
+		  content: attr(data-title);
+		  font-size: 12px;
+		  font-style: italic;
+		  padding: 13px;
+		  width: 220px;
+		  z-index: 20;
 		}
 	}
 }
+
 
 
 .list-projects-content{
@@ -51,35 +60,33 @@
 	&.hide{
 		opacity: 0;
 	}
-	&:hover .album-project-info{
-		// display: block;
+	figure:hover + .album-project-info{
 		opacity: 1;
 	}
 	.album-project-info{
 		position: absolute; 
+		top: 0; 
+		right: -250px;
 		background: #FFF; 
 		border-top:  0.01em solid #BDBDBD;
 		border-bottom: 0.01em solid #BDBDBD;
 		padding: 5px $marginNormal;
-		// max-width: 280px;
-		width: 280px;
-		// right: -100%;
-		opacity: 0;
-		// bottom:0;
-		// display:none;
+		width: 250px;
 		z-index: 99;
-		transition: all 0.2s ease;
 		color: #000;
-
+		transition: all 0.2s ease;
+		opacity: 0;
+		pointer-events: none;
 		h3, p{
-			font-size: $smallTextSize;
+			font-size: 14px;
 			font-weight:normal; 
+			font-style:normal;
 			text-decoration:none;
 			margin:0;
 			margin-bottom:5px;
 		}
 		h2{
-			font-size: $textSize; 
+			font-size: $smallTextSize; 
 			margin:0;
 			margin-bottom:5px;
 		}
@@ -88,12 +95,19 @@
 }
 
 // -------- page projet -----------
+// images 
+.projet-images{
+	padding-right:0;
+}
 // texte
 .projet-infos{
 	@include grayBorder;
 	@include grayBorderTop;
 	padding-top: $marginSmall;
 	padding-bottom: $marginNormal;
+	// margin-left: $marginSmall;
+	// flex-basis: calc(41.667% - 10px);
+	// max-width: calc(41.667% - 10px);
 	.projet-infos-inner{
 		h1{
 			font-size: $h2Size;
@@ -154,6 +168,9 @@
 .slider-nav{
 	display: flex;
 	justify-content: space-between;
+	cursor: pointer;
+	padding-left: 1rem; 
+	padding-right: 1rem;
 	.image-same-height{
 		height: 100px;
 	}
@@ -162,5 +179,26 @@
 	}
 }
 
+ // -------------- DESKTOP ALBUM --------------
+@media only screen and (min-width: 48em){
+	.tags{
+		position: fixed; 
+		margin-top: $marginBig;
+		padding-left: $marginSmall;
+		li{
+			display: block;
+			width: 80%;
+			margin-right: 0;
+		}
+	}
+	.projet-images{
+		padding-right:1rem;
+	}
+	.projet-infos{
+		margin-left: $marginSmall;
+		flex-basis: calc(41.667% - 10px);
+		max-width: calc(41.667% - 10px);
+	}
+}
 
 

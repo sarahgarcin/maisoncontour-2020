@@ -146,6 +146,7 @@ header {
     position: absolute;
     width: 16.667%;
     min-width: 110px;
+    max-width: 450px;
     top: 0;
     left: 1.1rem;
     z-index: 201;
@@ -336,25 +337,25 @@ header {
     .list-project__td h2 {
       margin-top: 20px; } }
 
-.sidebar .tags {
-  position: fixed;
+.tags {
   z-index: 200;
   width: inherit;
   max-width: inherit;
-  margin-top: 40px;
-  padding-left: 10px; }
-  .sidebar .tags li {
-    width: 80%;
+  margin-bottom: 40px; }
+  .tags li {
+    margin-right: 10px;
+    display: inline-block;
+    width: auto;
     font-size: 14px;
     border-bottom: 0.01em solid #BDBDBD;
     padding-top: 5px;
     padding-bottom: 5px;
     cursor: pointer;
     position: relative; }
-    .sidebar .tags li:hover, .sidebar .tags li.active {
+    .tags li:hover, .tags li.active {
       color: red;
       border-bottom: 1px solid red; }
-    .sidebar .tags li:hover:after {
+    .tags li:hover:after {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -386,31 +387,38 @@ header {
   position: relative; }
   .album-project.hide {
     opacity: 0; }
-  .album-project:hover .album-project-info {
+  .album-project figure:hover + .album-project-info {
     opacity: 1; }
   .album-project .album-project-info {
     position: absolute;
+    top: 0;
+    right: -250px;
     background: #FFF;
     border-top: 0.01em solid #BDBDBD;
     border-bottom: 0.01em solid #BDBDBD;
     padding: 5px 20px;
-    width: 280px;
-    opacity: 0;
+    width: 250px;
     z-index: 99;
+    color: #000;
     -webkit-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
-    color: #000; }
+    opacity: 0;
+    pointer-events: none; }
     .album-project .album-project-info h3, .album-project .album-project-info p {
       font-size: 14px;
       font-weight: normal;
+      font-style: normal;
       text-decoration: none;
       margin: 0;
       margin-bottom: 5px; }
     .album-project .album-project-info h2 {
-      font-size: 17px;
+      font-size: 14px;
       margin: 0;
       margin-bottom: 5px; }
+
+.projet-images {
+  padding-right: 0; }
 
 .projet-infos {
   border-bottom: 0.01em solid #BDBDBD;
@@ -448,9 +456,29 @@ header {
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between; }
+  justify-content: space-between;
+  cursor: pointer;
+  padding-left: 1rem;
+  padding-right: 1rem; }
   .slider-nav .image-same-height {
     height: 100px; }
+
+@media only screen and (min-width: 48em) {
+  .tags {
+    position: fixed;
+    margin-top: 40px;
+    padding-left: 10px; }
+    .tags li {
+      display: block;
+      width: 80%;
+      margin-right: 0; }
+  .projet-images {
+    padding-right: 1rem; }
+  .projet-infos {
+    margin-left: 10px;
+    -ms-flex-preferred-size: calc(41.667% - 10px);
+    flex-basis: calc(41.667% - 10px);
+    max-width: calc(41.667% - 10px); } }
 
 .actualite h2:hover {
   color: red;
@@ -466,7 +494,7 @@ header {
   display: none; }
 
 main {
-  padding: 150px 20px 0px 20px;
+  padding: 150px 0 0px 20px;
   width: 100%;
   margin: auto;
   font-size: 17px;
@@ -478,14 +506,13 @@ main {
 .top-page {
   border-bottom: 1px solid red;
   margin-left: 1rem; }
-  .top-page h1 {
-    max-width: 80%; }
 
 body[data-template='actualites'] .top-page, body[data-template='escales'] .top-page, body[data-template='album'] .top-page, body[data-template='projet'] .top-page {
   text-transform: uppercase; }
 
 .content-inner {
-  margin-top: 40px; }
+  margin-top: 40px;
+  padding-right: 0; }
 
 .small {
   font-size: 14px; }
@@ -565,11 +592,13 @@ article {
     transition: all 0.5s ease; }
 
 .go-back-arrow {
-  margin-top: 40px;
   width: inherit;
   max-width: inherit;
-  position: fixed;
-  text-align: center; }
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-left: 1rem;
+  margin-bottom: 10px; }
   .go-back-arrow a {
     color: #212121; }
     .go-back-arrow a:hover {
@@ -717,12 +746,23 @@ article {
     margin: 0; }
   main {
     padding-top: 20px;
+    padding-right: 20px;
     width: 96%; }
   .sidebar {
     padding-top: 8vw;
     position: relative;
     width: 100%;
     max-width: 16.667%; }
+  .top-page {
+    border-bottom: 1px solid red;
+    margin-left: 1rem; }
+    .top-page h1 {
+      max-width: 80%; }
+  .go-back-arrow {
+    position: fixed;
+    margin-left: -2%;
+    margin-bottom: 0;
+    margin-top: 40px; }
   .show-for-small-only {
     display: none !important; }
   .hide-for-small-only {

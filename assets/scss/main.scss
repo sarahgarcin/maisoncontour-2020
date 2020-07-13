@@ -118,7 +118,7 @@
   }
 
   main{
-    padding: 150px $marginNormal 0px $marginNormal; 
+    padding: 150px 0 0px $marginNormal; 
     width: 100%;
     // max-width: 1000px;
     margin:auto;
@@ -134,9 +134,6 @@
   .top-page{
     border-bottom: 1px solid $mainColor;
     margin-left: 1rem;
-    h1{
-      max-width: 80%;
-    }
   }
 
   body[data-template='actualites'] .top-page, body[data-template='escales'] .top-page, body[data-template='album'] .top-page, body[data-template='projet'] .top-page{
@@ -145,6 +142,7 @@
 
   .content-inner{
     margin-top: $marginBig;
+    padding-right:0;
   }
 
   .small{
@@ -248,11 +246,17 @@
   }
 
   .go-back-arrow{
-    margin-top: $marginBig;
     width:inherit;
     max-width: inherit;
-    position: fixed;
+    font-size: $smallTextSize;
     text-align: center; 
+    text-transform:uppercase;
+    // position: fixed;
+    // margin-left: -2%;
+    // margin-bottom: 0;
+     // margin-top: $marginBig;
+    margin-left: 1rem;
+    margin-bottom: $marginSmall;
     a{
       color: $textColor; 
       // font-size: 40px;
@@ -471,7 +475,8 @@
     }
     main{
       padding-top:$marginNormal;
-       width: 96%;
+      padding-right: $marginNormal;
+      width: 96%;
     }
     .sidebar{
       padding-top:8vw;
@@ -480,6 +485,22 @@
       max-width:16.667%;
       // border: 1px solid gray;
     }
+
+    .top-page{
+      border-bottom: 1px solid $mainColor;
+      margin-left: 1rem;
+      h1{
+        max-width: 80%;
+      }
+    }
+
+
+  .go-back-arrow{
+    position: fixed;
+    margin-left: -2%;
+    margin-bottom: 0;
+    margin-top: $marginBig;
+  }
 
 
     .show-for-small-only{

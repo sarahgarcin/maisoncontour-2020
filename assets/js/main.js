@@ -67,16 +67,25 @@ function init(){
 	// 	$(this).parents('.album-project').find('.album-project-info').hide();
 	// })
 
-	$('.album-project').hover(function(event){
-		var left = event.pageX - $(this).offset().left;
-     var top = event.pageY - $(this).offset().top;
-		$(this).find('.album-project-info').css({
-			'top': top,
-			'left': left,
-			// 'display': 'block'
-		});
-	// }, function(e){
-	// 	$(this).find('.album-project-info').hide();
+	// $('.album-project').hover(function(event){
+	// 	var left = event.pageX - $(this).offset().left;
+ //     var top = event.pageY - $(this).offset().top;
+	// 	$(this).find('.album-project-info').css({
+	// 		'top': top,
+	// 		'left': left,
+	// 		// 'display': 'block'
+	// 	});
+	// // }, function(e){
+	// // 	$(this).find('.album-project-info').hide();
+	// });
+	$('.album-project').each(function(){
+		console.log($(this).offset().left);
+		if($(this).offset().left > $(window).width() / 1.5){
+			console.log('hello');
+			$(this).find('.album-project-info').css({
+				'left' : '-250px'
+			})
+		}
 	});
 
 	// système d'affichage / effacement avec les tags
