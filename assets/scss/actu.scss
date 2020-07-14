@@ -1,3 +1,11 @@
+.actualite_summary, .actualite_content {
+	ul li{
+		list-style: disc;
+    margin-left: $marginNormal;
+    margin-bottom: $marginSmall;
+	}
+}
+
 .actualite h2{
 	&:hover{
 		color: $mainColor;

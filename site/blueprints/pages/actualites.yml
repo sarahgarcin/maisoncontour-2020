@@ -10,7 +10,7 @@ sections:
     type: pages
     templates: actualite
     layout: list
-    info: "{{ page.datefield.toDate("d/m/Y") }}"
+    info: "{{ page.datefield}}"
 
 # fields:
 #   group: 

@@ -10,12 +10,13 @@
 			</div>
 			<div class="content-inner actualites col-xs-12">
 			<?php 
-				$events = $page->children()->listed()->filter(function ($child) {
-				  return $child->datefield()->toDate() > time() - (1 * 24 * 60 * 60);
-				});
-				$events = $events->sortBy(function ($page) {
-				  return $page->datefield()->toDate();
-				}, 'asc');
+				$events = $page->children()->listed();
+				// $events = $page->children()->listed()->filter(function ($child) {
+				//   return $child->datefield()->toDate() > time() - (1 * 24 * 60 * 60);
+				// });
+				// $events = $events->sortBy(function ($page) {
+				//   return $page->datefield()->toDate();
+				// }, 'asc');
 				?>
 				<?php foreach($events as $child):?>
 					<article class="actualite row">
@@ -34,7 +35,7 @@
 					<?php endif;?>
 						<div class="actualite_content-wrapper col-xs-12 col-sm-8 col-md-8">
 							<div class="actualite_title">
-								<span class="actualite_date small"><?= $child->datefield()->toDate('d.m.Y') ?></span><span class="actualite-separator small"> — </span><span class="actualite_lieu small"><?= $child->place()?></span>
+								<span class="actualite_date small"><?= $child->datefield() ?></span><span class="actualite-separator small"> — </span><span class="actualite_lieu small"><?= $child->place()?></span>
 								<h2><?= $child->title()->html()?></h2>
 							</div>
 							<div class="actualite_summary">

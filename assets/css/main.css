@@ -480,6 +480,11 @@ header {
     flex-basis: calc(41.667% - 10px);
     max-width: calc(41.667% - 10px); } }
 
+.actualite_summary ul li, .actualite_content ul li {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 10px; }
+
 .actualite h2:hover {
   color: red;
   cursor: pointer; }
@@ -647,8 +652,14 @@ article {
   .pdf:hover {
     color: red; }
 
-.quote, blockquote {
+.quote {
   margin: 20px 0 40px 40px; }
+
+blockquote {
+  margin: 20px 0 10px 20px; }
+
+.quote blockquote {
+  margin-left: 0; }
 
 .list h2 {
   margin-bottom: 40px; }

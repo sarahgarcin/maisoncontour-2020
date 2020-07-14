@@ -7,7 +7,7 @@
 		<?php foreach($data->selectimages()->toFiles() as $image):?>
 			<figure class="image-same-height" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
 				<a href="<?= $image->url(); ?>" itemprop="contentUrl" data-size="<?= $image->width(); ?>x<?= $image->height(); ?>" title="<?= $image->text()->value(); ?>">
-          <img src="<?= $image->url(); ?>" itemprop="thumbnail"
+          <img srcset="<?= $image->srcset([300, 800, 1024]) ?>" src="<?= $image->url(); ?>" sizes="100w" itemprop="thumbnail"
                alt="<?= $page->title()->value() ?> <?= $image->text()->value(); ?>"
                class="img-responsive"/>
 				</a>

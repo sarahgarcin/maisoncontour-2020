@@ -1,7 +1,7 @@
 title: Actualité
 preset: page
 pages: false
-num: '{{ page.datefield.toDate("Ymd") }}'
+# num: '{{ page.datefield.toDate("Ymd") }}'
 
 fields:
   cover: 
@@ -9,7 +9,7 @@ fields:
     type: files
   datefield: 
     label: Date
-    type: date
+    type: text
   place: 
     label: Lieu
     type: text

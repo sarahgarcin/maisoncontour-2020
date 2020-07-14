@@ -140,6 +140,12 @@
     text-transform:uppercase;
   }
 
+  // body[data-template="default"]{
+  //   .content-inner{
+  //     max-width: 1200px;
+  //   }
+  // }
+
   .content-inner{
     margin-top: $marginBig;
     padding-right:0;
@@ -320,8 +326,16 @@
   }
 
   // blocks
-  .quote, blockquote{
+  .quote{
     margin: $marginNormal 0 $marginBig $marginBig;
+  }
+
+  blockquote{
+    margin: $marginNormal 0 $marginSmall $marginNormal;
+  }
+
+  .quote blockquote{
+    margin-left:0;
   }
 
   .list{
