@@ -10,6 +10,7 @@
           <img srcset="<?= $image->srcset([300, 800, 1024]) ?>" src="<?= $image->url(); ?>" sizes="100w" itemprop="thumbnail"
                alt="<?= $page->title()->value() ?> <?= $image->text()->value(); ?>"
                class="img-responsive"/>
+          <!-- <?= $image->lazysrcset('default');?> -->
 				</a>
         <?php if($image->caption()->isNotEmpty()):?>
 					<figcaption itemprop="caption description"><?= $image->caption()->kt()?></figcaption>

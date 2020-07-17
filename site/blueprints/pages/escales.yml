@@ -6,6 +6,17 @@ sections:
     type: info
     headline: Info
     text: |
-      Cette page n'a pas de contenu, elle récupère les projets et les affichent en liste. 
+      Cette page n'a pas de contenu, elle récupère les projets et les affichent en liste.
+
+  text: 
+    type: fields
+    headline: Introduction
+    fields: 
+      intro: 
+        label: Texte d'introduction 
+        type: textarea
+
+
+
 
 

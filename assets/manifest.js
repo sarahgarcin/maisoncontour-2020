@@ -14,7 +14,7 @@ module.exports.pluginScripts = [
   'node_modules/photoswipe/dist/photoswipe.min.js', 
   'node_modules/photoswipe/dist/photoswipe-ui-default.min.js', 
   'assets/js/green-audio-player.min.js', 
-  'assets/js/lazyload.min.js', 
+  'assets/js/lazysizes.min.js', 
   'assets/js/slick.min.js'
 
 ];

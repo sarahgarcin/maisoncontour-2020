@@ -22,6 +22,12 @@ return [
       ]
   	]
   ],
+  // 'thumbs' => [
+  //   'srcsets' => [
+  //       'default' => [320, 1200],
+  //       'breakpoints' => [800, 1024, 1440, 2048],
+  //     ],
+  // ],
   'smartypants' => [
     'doublequote.open'           => '«&#8239;',
     'doublequote.close'          => '&#8239;»',

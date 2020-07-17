@@ -67,6 +67,7 @@ fields:
 
       list:
         name: Liste à déplier
+        label: Liste à déplier - {{title}} 
         preview:
           snippet: blocks/list
           css: /assets/css/blocks/events.css

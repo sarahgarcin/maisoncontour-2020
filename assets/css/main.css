@@ -104,7 +104,7 @@ video, iframe {
   font-size: 17px; }
   .nav .main-nav {
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     padding-left: 0; }
     .nav .main-nav ul {
       padding: 0; }
@@ -229,6 +229,9 @@ header {
       max-width: 75.333%;
       left: 17%;
       padding: 0; } }
+
+.escales_intro-text {
+  margin-bottom: 50px; }
 
 .list-projects__th {
   border-bottom: 0.12em solid #212121;
@@ -498,12 +501,29 @@ header {
 .hide-for-small-only {
   display: none; }
 
+.page_loader {
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999; }
+  .page_loader .page_loader-inner {
+    width: 200px;
+    left: 50%;
+    top: 50%;
+    margin-left: -100px;
+    margin-top: -100px;
+    position: absolute;
+    z-index: 999; }
+
 main {
   padding: 150px 0 0px 20px;
   width: 100%;
   margin: auto;
   font-size: 17px;
-  margin-bottom: 200px; }
+  margin-bottom: 400px; }
 
 .rouge {
   color: red; }
@@ -637,6 +657,9 @@ article {
       color: #212121; }
       .table-of-contents li a:hover {
         color: red; }
+    .table-of-contents li.active a {
+      color: red;
+      font-style: italic; }
 
 .pdf {
   font-size: 14px;
@@ -652,14 +675,22 @@ article {
   .pdf:hover {
     color: red; }
 
+.bodytext + .quote {
+  margin-top: -20px; }
+
 .quote {
-  margin: 20px 0 40px 40px; }
+  margin: 0 0 25px 40px; }
+
+.quote + .list {
+  margin-top: 40px; }
 
 blockquote {
   margin: 20px 0 10px 20px; }
 
 .quote blockquote {
-  margin-left: 0; }
+  margin: 0; }
+  .quote blockquote p {
+    margin-bottom: 5px; }
 
 .list h2 {
   margin-bottom: 40px; }
@@ -726,17 +757,22 @@ blockquote {
 .bodytext + .imagesgallery {
   margin-top: -30px; }
 
-.imagesgallery ul {
-  margin-left: -10px; }
+.imagesgallery {
+  margin-bottom: 80px; }
+  .imagesgallery .row {
+    margin-left: 0; }
+  .imagesgallery .project__image {
+    margin-left: -10px; }
+  .imagesgallery .image-same-height {
+    height: 200px; }
 
-.imagesgallery .image-same-height {
-  height: 200px; }
-
-.pagesgallery li a figcaption {
-  color: #212121; }
-
-.pagesgallery li a:hover figcaption {
-  color: red; }
+.pagesgallery li {
+  margin-bottom: 40px; }
+  .pagesgallery li a figcaption {
+    margin-top: 5px;
+    color: #212121; }
+  .pagesgallery li a:hover figcaption {
+    color: red; }
 
 .projectsgallery ul {
   margin: 0; }
@@ -780,3 +816,7 @@ blockquote {
     display: block !important; }
   .image-same-height {
     height: 142px; } }
+
+@media only screen and (min-width: 1920px) {
+  body[data-template="default"] .content-inner, body[data-template="actualites"] .content-inner {
+    max-width: 1200px; } }

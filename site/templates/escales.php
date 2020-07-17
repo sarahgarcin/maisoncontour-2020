@@ -1,5 +1,11 @@
 <?php snippet('header') ?>
 <?php snippet('menu') ?>
+
+<div class="page_loader"> 
+	<div class="page_loader-inner"> 
+		<img src="<?= kirby()->urls()->assets()?>/images/loader.gif" alt="loader" />
+	</div>
+</div>
 	
 	<main class='row'>
 		<div class="sidebar col-xs-12 col-md-2">
@@ -9,6 +15,9 @@
 				<h1><?=$page->title()?></h1>
 			</div>
 			<div class="content-inner list-projects col-xs-12">
+				<div class="escales_intro-text">
+					<?= $page->intro()->kt() ?>
+				</div>
 				<div class="list-projects__th hide-for-small-only">
 					<div class="list-projects__details">
 						<div class="list-projects__details__inner row">
@@ -77,7 +86,12 @@
 									</div>
 								</div>
 								<div class="list-project__td list-project__td--distribution col-xs-12 col-md-2">
-									<?= $project->distribution()->chopper(18, 'words', '…')?>
+									<div class="chopper">
+										<?= $project->distribution()->chopper(18, 'words', '…')?>
+									</div>
+									<div class="entire">
+										<?= $project->distribution()->kt() ?>
+									</div>
 								</div>
 								<div class="list-project__td list-project__td--partenaires col-xs-12 col-md-3">
 									<div class="chopper"><?= $project->partenaires()->chopper(20, 'words', '…') ?></div>
@@ -91,12 +105,13 @@
 									<div class="photoswipe project__image" itemscope itemtype="http://schema.org/ImageGallery">
 										<div class="row">
 										  <?php foreach ($project->images() as $image): ?>
-										    <figure class="image-same-height" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+										  	<figure class="image-same-height" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
 										        <a href="<?= $image->url(); ?>" itemprop="contentUrl" data-size="<?= $image->width(); ?>x<?= $image->height(); ?>"
 										           title="<?= $image->text()->value(); ?>">
 										            <img src="<?= $image->url(); ?>" itemprop="thumbnail"
 										                 alt="<?= $page->title()->value() ?> <?= $image->text()->value(); ?>"
 										                 class="img-responsive"/>
+										            <!-- <?= $image->lazysrcset(['class'=> 'image-same-height']);?> -->
 										        </a>
 										        <?php if($image->caption()->isNotEmpty()):?>
 															<figcaption itemprop="caption description"><?= $image->caption()->kt()?></figcaption>
