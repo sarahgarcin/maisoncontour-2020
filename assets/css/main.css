@@ -1,4 +1,18 @@
 @charset "UTF-8";
+@font-face {
+  font-family: 'Concorde BQ';
+  src: url("../fonts/ConcordeBQ-Regular.woff2") format("woff2"), url("../fonts/ConcordeBQ-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Maximum';
+  src: url("../fonts/Maximum-Gras.woff2") format("woff2"), url("../fonts/Maximum-Gras.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap; }
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
