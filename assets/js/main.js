@@ -6,9 +6,9 @@ $(document).ready(function(){
 function init(){
 
 	// LOADER
-	$(window).on('load', function() {
-		$(".page_loader").fadeOut("slow");
-	});
+	// $(window).on('load', function() {
+	// 	$(".page_loader").fadeOut("slow");
+	// });
 
 	// -------------- OPEN MENU --------------- //
 	var menuBtn = $('.menu_btn');
@@ -47,12 +47,23 @@ function init(){
 		//  -------------- Escales ---------------
 	// déplier escales
 	$('.list-project__details__inner').on('click', function(){
-		if($(this).parents('article').hasClass('active')){
-			$(this).parents('article').removeClass('active');
+		var $article = $(this).parents('article');
+		if($article.hasClass('active')){
+			$article.removeClass('active');
 		}
 		else{
 			$('.list-projects article').removeClass('active');
-			$(this).parents('article').addClass('active');
+			$article.addClass('active');
+			// scroll top to element of the page
+			setTimeout(function(){
+				$('html, body').animate({
+					scrollTop: $article.offset().top
+				}, 500);
+			}, 500)
+			$article.find('figure').each(function(){
+				var imageSrc = $(this).attr('data-image');
+				$(this).find('img').attr('src', imageSrc);
+			});
 		}
 	});
 

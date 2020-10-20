@@ -59,6 +59,7 @@
 	position: relative; 
 	&.hide{
 		opacity: 0;
+		display:none;
 	}
 	figure:hover + .album-project-info{
 		opacity: 1;
@@ -123,7 +124,14 @@
 				list-style: disc;
 				margin-bottom: $marginSmall;
 			}
+			&.pdfs{
+				padding-left: 0;
+				li{
+					list-style:none;
+				}
+			}
 		}
+
 	}
 }
 

@@ -32,6 +32,9 @@
 			}
 			.old-site{
 				p{font-size:13px;}
+				a{
+					color:$mainColor;
+				}
 			}
 			li{
 				list-style: none;
@@ -141,6 +144,9 @@ header{
 		transition: all 0.5s ease;
 		z-index: 300;
 		padding: 0 $marginBig; 
+		.main-nav{
+			margin-top: 60px;
+		}
 		&.active{
 			max-height: 100vh; 
 			overflow: auto;
@@ -169,6 +175,9 @@ header{
 			max-width: 75.333%;
 			left: 17%;
 			padding: 0; 
+			.main-nav{
+				margin-top: $marginSmall;
+			}
 		}
 	}
 }

@@ -29,17 +29,19 @@
 						<?php endforeach;?>
 						</ul>
 					</div>
-		  		<div class="list_pdfs">
-		  			<ul>
-		  			<?php foreach($el->pdfs()->toStructure() as $pdf):?>
-							<li>
-								<a href="<?= $pdf->pdf()->toFile()->url()?>" title="<?= $pdf->title()?>" target="_blank">
-									<?= $pdf->title()?>
-								</a>
-							</li>
-		  			<?php endforeach;?>
-		  			</ul>
-		  		</div>
+					<?php if($el->pdfs()->isNotEmpty()):?>
+			  		<div class="list_pdfs">
+			  			<ul>
+				  			<?php foreach($el->pdfs()->toStructure() as $pdf):?>
+									<li>
+										<a href="<?= $pdf->pdf()->toFile()->url()?>" title="<?= $pdf->title()?>" target="_blank">
+											<?= $pdf->title()?>
+										</a>
+									</li>
+				  			<?php endforeach;?>
+			  			</ul>
+			  		</div>
+			  	<?php endif;?>
 		  	</div>
 		  </article>
 	<?php endforeach;?>

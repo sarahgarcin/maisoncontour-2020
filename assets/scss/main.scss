@@ -210,12 +210,16 @@
       max-height: 100%;
     }
   }
+  .audio + p{
+    margin-top: 0;
+    margin-bottom: $marginBig;
+  }
 
   .audioplayer{
     background-color: transparent; 
     box-shadow: none;
     padding-left: 0;
-    margin-bottom: $marginNormal; 
+    // margin-bottom: $marginNormal;
     .holder{
       .play-pause-btn__icon{
         fill: $mainColor;
@@ -490,7 +494,7 @@
   }
 
   .imagesgallery{
-    margin-bottom: $marginBig * 2;
+    margin-bottom: $marginBig;
     .row{margin-left:0;}
     .project__image{
       margin-left: -10px;
@@ -501,6 +505,7 @@
   }
 
   .pagesgallery{
+    margin-bottom:0;
     li{
       margin-bottom: $marginBig;
       a{
@@ -534,6 +539,52 @@
         color: $mainColor;
       }
     }
+  }
+
+  // UNIFORM
+  .adhesion{
+    label{
+      padding-bottom:5px;
+    }
+    input{
+      display:block;
+      font-size: $textSize;
+      font-family: $font;
+    }
+    input[type="text"], input[type="email"]{
+      margin-bottom: $marginSmall;
+      width: 300px;
+      height: 30px;
+      background: transparent;
+      border: 0.01em solid #BDBDBD;
+    }
+    input[type="radio"]{
+      display:inline-block;
+    }
+    textarea{
+      width: 50%;
+      height: 100px;
+      display: block;
+      background: transparent;
+      border: 0.01em solid #BDBDBD;
+    }
+    input[type="submit"]{
+      margin-top: $marginNormal;
+      background:transparent;
+      padding: 0;
+      cursor: pointer; 
+      font-size: $textSize;
+      font-family: $font;
+      border: 0.01em solid #BDBDBD;
+      padding: $marginSmall;
+      &:hover{
+        color: $mainColor;
+      }
+    }
+  }
+  .uniform__potty {
+    position: absolute;
+    left: -9999px;
   }
 
 
@@ -594,6 +645,7 @@
       max-width: 1200px;
     }
   }
+
 
 }
 

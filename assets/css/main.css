@@ -140,6 +140,8 @@ video, iframe {
         margin-bottom: 30px; }
       .nav .main-nav ul .old-site p {
         font-size: 13px; }
+      .nav .main-nav ul .old-site a {
+        color: red; }
       .nav .main-nav ul li {
         list-style: none;
         color: #212121;
@@ -223,6 +225,8 @@ header {
     transition: all 0.5s ease;
     z-index: 300;
     padding: 0 40px; }
+    header .nav .main-nav {
+      margin-top: 60px; }
     header .nav.active {
       max-height: 100vh;
       overflow: auto;
@@ -242,7 +246,9 @@ header {
       width: 75.333%;
       max-width: 75.333%;
       left: 17%;
-      padding: 0; } }
+      padding: 0; }
+      header .nav .main-nav {
+        margin-top: 10px; } }
 
 .escales_intro-text {
   margin-bottom: 50px; }
@@ -403,7 +409,8 @@ header {
   transition: opacity 0.2s ease;
   position: relative; }
   .album-project.hide {
-    opacity: 0; }
+    opacity: 0;
+    display: none; }
   .album-project figure:hover + .album-project-info {
     opacity: 1; }
   .album-project .album-project-info {
@@ -453,6 +460,10 @@ header {
     .projet-infos .projet-infos-inner ul li {
       list-style: disc;
       margin-bottom: 10px; }
+    .projet-infos .projet-infos-inner ul.pdfs {
+      padding-left: 0; }
+      .projet-infos .projet-infos-inner ul.pdfs li {
+        list-style: none; }
 
 .slick-prev::before, .slick-next::before {
   color: #212121; }
@@ -568,12 +579,15 @@ body[data-template='actualites'] .top-page, body[data-template='escales'] .top-p
     width: auto;
     max-height: 100%; }
 
+.audio + p {
+  margin-top: 0;
+  margin-bottom: 40px; }
+
 .audioplayer {
   background-color: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
-  padding-left: 0;
-  margin-bottom: 20px; }
+  padding-left: 0; }
   .audioplayer .holder .play-pause-btn__icon {
     fill: red; }
   .audioplayer .slider .gap-progress .pin {
@@ -772,7 +786,7 @@ blockquote {
   margin-top: -30px; }
 
 .imagesgallery {
-  margin-bottom: 80px; }
+  margin-bottom: 40px; }
   .imagesgallery .row {
     margin-left: 0; }
   .imagesgallery .project__image {
@@ -780,13 +794,15 @@ blockquote {
   .imagesgallery .image-same-height {
     height: 200px; }
 
-.pagesgallery li {
-  margin-bottom: 40px; }
-  .pagesgallery li a figcaption {
-    margin-top: 5px;
-    color: #212121; }
-  .pagesgallery li a:hover figcaption {
-    color: red; }
+.pagesgallery {
+  margin-bottom: 0; }
+  .pagesgallery li {
+    margin-bottom: 40px; }
+    .pagesgallery li a figcaption {
+      margin-top: 5px;
+      color: #212121; }
+    .pagesgallery li a:hover figcaption {
+      color: red; }
 
 .projectsgallery ul {
   margin: 0; }
@@ -801,6 +817,47 @@ blockquote {
     margin: 0; }
   .projectsgallery li a:hover h3, .projectsgallery li a:hover p {
     color: red; }
+
+.adhesion label {
+  padding-bottom: 5px; }
+
+.adhesion input {
+  display: block;
+  font-size: 17px;
+  font-family: "Concorde BQ", serif; }
+
+.adhesion input[type="text"], .adhesion input[type="email"] {
+  margin-bottom: 10px;
+  width: 300px;
+  height: 30px;
+  background: transparent;
+  border: 0.01em solid #BDBDBD; }
+
+.adhesion input[type="radio"] {
+  display: inline-block; }
+
+.adhesion textarea {
+  width: 50%;
+  height: 100px;
+  display: block;
+  background: transparent;
+  border: 0.01em solid #BDBDBD; }
+
+.adhesion input[type="submit"] {
+  margin-top: 20px;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  font-size: 17px;
+  font-family: "Concorde BQ", serif;
+  border: 0.01em solid #BDBDBD;
+  padding: 10px; }
+  .adhesion input[type="submit"]:hover {
+    color: red; }
+
+.uniform__potty {
+  position: absolute;
+  left: -9999px; }
 
 @media only screen and (min-width: 48em) {
   .cover {

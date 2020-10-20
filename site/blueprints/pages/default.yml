@@ -155,4 +155,14 @@ fields:
                 type: select
                 options: query
                 query: site.index
+      adhesion:
+        name: Formulaire d'adhésion
+        label: Formulaire d'adhésion — {{title}}
+        preview:
+          snippet: blocks/adhesion
+        defaultView: preview 
+        fields:
+          title: 
+            label: Titre de la section
+            type: text
 

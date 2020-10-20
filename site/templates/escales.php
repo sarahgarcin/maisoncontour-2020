@@ -1,11 +1,11 @@
 <?php snippet('header') ?>
 <?php snippet('menu') ?>
 
-<div class="page_loader"> 
+<!-- <div class="page_loader"> 
 	<div class="page_loader-inner"> 
 		<img src="<?= kirby()->urls()->assets()?>/images/loader.gif" alt="loader" />
 	</div>
-</div>
+</div> -->
 	
 	<main class='row'>
 		<div class="sidebar col-xs-12 col-md-2">
@@ -105,13 +105,12 @@
 									<div class="photoswipe project__image" itemscope itemtype="http://schema.org/ImageGallery">
 										<div class="row">
 										  <?php foreach ($project->images() as $image): ?>
-										  	<figure class="image-same-height" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+										  	<figure class="image-same-height" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" data-image="<?= $image->url(); ?>">
 										        <a href="<?= $image->url(); ?>" itemprop="contentUrl" data-size="<?= $image->width(); ?>x<?= $image->height(); ?>"
 										           title="<?= $image->text()->value(); ?>">
-										            <img src="<?= $image->url(); ?>" itemprop="thumbnail"
-										                 alt="<?= $page->title()->value() ?> <?= $image->text()->value(); ?>"
+										            <img src="" itemprop="thumbnail"
+										                 alt="<?= $project->title()?>"
 										                 class="img-responsive"/>
-										            <!-- <?= $image->lazysrcset(['class'=> 'image-same-height']);?> -->
 										        </a>
 										        <?php if($image->caption()->isNotEmpty()):?>
 															<figcaption itemprop="caption description"><?= $image->caption()->kt()?></figcaption>
