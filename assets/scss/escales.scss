@@ -19,6 +19,13 @@
 	}
 	article{
 		font-size: $smallTextSize;
+		figure img{
+			opacity: 0;
+			transition: opacity 0.5s linear;
+			&.loaded{
+				opacity: 1;
+			}
+		}
 		p, h2{font-size: $smallTextSize;}
 		h2{
 			margin-bottom:0;

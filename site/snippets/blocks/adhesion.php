@@ -43,6 +43,7 @@
 		Si vous ne pouvez envoyer votre règlement par chèque, merci de le préciser ci-dessous et nous reviendrons vers vous.</p>
 	  <label for='message'>Message</label>
 		<textarea name="message"><?php echo $form->old('message'); ?></textarea>
+		<input type="hidden" name="formid" value="adhesion">
 		<?php echo csrf_field(); ?>
 		<?php echo honeypot_field(); ?>
 	   <input type="submit" value="Envoyer">

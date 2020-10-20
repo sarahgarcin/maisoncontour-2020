@@ -165,4 +165,14 @@ fields:
           title: 
             label: Titre de la section
             type: text
+      contact:
+        name: Formulaire de contact
+        label: Formulaire de contact — {{title}}
+        preview:
+          snippet: blocks/contact
+        defaultView: preview 
+        fields:
+          title: 
+            label: Titre de la section
+            type: text
 

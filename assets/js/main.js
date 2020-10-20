@@ -59,10 +59,14 @@ function init(){
 				$('html, body').animate({
 					scrollTop: $article.offset().top
 				}, 500);
-			}, 500)
+			}, 500);
 			$article.find('figure').each(function(){
 				var imageSrc = $(this).attr('data-image');
-				$(this).find('img').attr('src', imageSrc);
+				// $(this).find('img').attr('src', imageSrc);
+				$(this).find('img').on("load", function() {
+        	// image loaded here
+        	$(this).addClass('loaded');
+    		}).attr('src', imageSrc);
 			});
 		}
 	});
@@ -100,7 +104,7 @@ function init(){
 			console.log('hello');
 			$(this).find('.album-project-info').css({
 				'left' : '-250px'
-			})
+			});
 		}
 	});
 

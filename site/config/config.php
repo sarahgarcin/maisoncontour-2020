@@ -13,6 +13,10 @@ return [
   'languages' => true,
   'thumbs' => [
   	'autoOrient' => true,
+    'presets' => [
+      'default' => ['width' => 1024, 'quality' => 80],
+      'blurred' => ['blur' => true]
+    ],
     'srcsets' => [
       'default' => [
         '800w' => ['width' => 800, 'quality' => 80],
